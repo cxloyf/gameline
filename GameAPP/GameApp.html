@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jssdk-v2.js"></script>
+	<script type="text/javascript" src="js/LinkedList.js"></script>
+	<script type="text/javascript" src="js/storePlayRecord.js"></script>
+	<script type="text/javascript" src="js/getAppData.js"></script>
+	
+	<link type="text/css" rel="stylesheet" href="css/gameApp.css" />
+</head>
+	
+<body>
+<div class="header"><nobr>
+		<div class="playRecordText">&nbsp我玩过的</div>
+		<div class="separator">&nbsp&nbsp</div>
+		<div class="playrecord" id="playrecord"> </div>
+		<!--<div style="height:100px; width:1px; border-left:1px #000 solid"></div>-->
+		<!--<div class="playrecord"><a>nihao7677777777576ghfhfhfhfgh&#9</a> <a>nihao7677777777576ghfhfhfhfgh&#9</a> <a>nihao7677777777576ghfhfhfhfgh&#9</a> <a>nihao7677777777576ghfhfhfhfgh&#9</a></div>-->
+		<span class="fh-refresh" id="fh-refresh" onclick="clearDiskRecord()"></span>
+	</nobr></div>
+	
+    <div class="game" id="games">
+	<ul class="tm_list" id="tm_list">
+	</ul>
+    </div>
+	<div class="box">
+	<input type="button" id="replace_btn" value="换一换" class="replace_btn" onclick="ajax()">
+	<span class="more_game_text" id="more_game_text"><a class="more_game_text_a" href="https://www.baidu.com/s?wd=%E5%B0%8F%E6%B8%B8%E6%88%8F&ie=utf-8&tn=11000002_ie_dg" target="_blank">更多小游戏请猛戳这里</a></span>
+	</div>
+<script>
+    bdc.app.init({
+        appId: 4019
+    });
+    bdc.app.ready();
+
+</script>
+</body>
+</html>

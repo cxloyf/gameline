@@ -1,0 +1,61 @@
+		* {
+            margin: 0;
+            padding: 0;
+        }
+		html{overflow-x:hidden}
+		html{overflow-y:hidden}
+       
+		.media
+		{
+			width: 100%;
+            position: relative;
+            margin: 0px;
+            padding: 0px;
+			border:0px;
+		}
+		
+        .shrink {
+            width: 100%;
+            background: #FFFFFF;
+            position: relative;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .operateText {
+            position: absolute;
+			vertical-align:middle; 
+            right: 0px;
+            top: 0px;
+            margin: 0px;
+            cursor: pointer;
+            color: black;
+        }
+		.pullDownBanner{
+		/* position: relative; */
+            margin: 0px;
+			display: block;
+			background: #FFFFFF;
+		}
+        .GameKey  {
+		/* position: relative; */
+            margin: 0px;
+			display: block;
+			background: #FFFFFF;
+		}
+		
+		.intro_url {
+			top:0px;
+            position: relative;
+            color: gray;
+			float:right;
+			text-align:right;
+			width:100%;
+			font-size:13px;
+			right : 5px;
+        }
+		.mediaLayout{
+			width:100%;
+			height:500px;
+			border:0px;
+		}

@@ -1,0 +1,35 @@
+#GameKey .ico_c_mouseleft,#GameKey .ico_c_mousescroll,#GameKey .ico_c_mousemove,#GameKey .ico_c_drag,
+#GameKey .ico_c_alt,#GameKey .ico_c_enter,#GameKey .ico_c_shift,#GameKey .ico_c_ctrl,#GameKey .ico_c_tab,#GameKey .ico_c_end,#GameKey .ico_c_space,
+#GameKey .ico_c_left,#GameKey .ico_c_right,#GameKey .ico_c_up,#GameKey .ico_c_down,#GameKey .ico_c_lr,#GameKey .ico_c_ud,#GameKey .ico_c_wasd,#GameKey .ico_c_arrows,.PlayKey,.player1,.player2,#GameKey .ico_c_blank
+{display:block;height:32px;background:url(http://www.4399.com/images/play/icon_keys.gif) no-repeat;text-indent:-999em;}
+#GameKey .ico_key{width:23px;height:28px;line-height:22px;display:block;font-weight:bold;text-align:center;font:bold 9px/18px Verdana,"ËÎÌו",Arial,Helvetica,sans-serif;color:#363636;background:url(http://www.4399.com/images/play/icon_keys.gif) 0 -554px no-repeat;}
+#GameKey .ico_c_mouseleft{width:20px;background-position:0 0;}
+#GameKey .ico_c_mousescroll{width:24px;background-position:0 -35px;}
+#GameKey .ico_c_mousemove{width:24px;background-position:0 -69px;}
+#GameKey .ico_c_drag{width:24px;background-position:0 -105px;}
+#GameKey .ico_c_alt{width:38px;background-position:0 -138px;}
+#GameKey .ico_c_enter{width:48px;background-position:0 -170px;}
+#GameKey .ico_c_shift{width:48px;background-position:0 -202px;}
+#GameKey .ico_c_ctrl{width:41px;background-position:0 -234px;}
+#GameKey .ico_c_tab{width:38px;background-position:0 -266px;}
+#GameKey .ico_c_end{width:38px;background-position:0 -298px;}
+#GameKey .ico_c_space{width:78px;background-position:0 -330px;}
+#GameKey .ico_c_left{width:23px;background-position:0 -362px;}
+#GameKey .ico_c_right{width:23px;background-position:0 -394px;}
+#GameKey .ico_c_up{width:23px;background-position:0 -426px;}
+#GameKey .ico_c_down{width:23px;background-position:0 -458px;}
+#GameKey .ico_c_blank{width:28px;background-position:0 -553px;}
+#GameKey .ico_c_lr{width:50px;background-position:0 -491px;}
+#GameKey .ico_c_ud{width:48px;background-position:0 -523px;}
+#GameKey .ico_c_wasd{width:53px;background-position:0 -587px;}
+#GameKey .ico_c_arrows{width:53px;background-position:0 -628px;}
+#GameKey .PlayKey{height:28px;width:98px;background-position:0 -761px;font-size:0px;}
+#GameKey .player1{height:23px;width:66px;background-position:0px -702px;font-size:0px;line-height:23px;margin-top:3px;margin-left:5px;}
+#GameKey .player2{height:23px;width:66px;background-position:0px -728px;font-size:0px;line-height:23px;margin-top:3px;margin-left:5px;}
+#GameKey .GameKeyDivide{color:red;height:1px;}
+#GameKey .GameKeySpliter{color:green;height:1px;}
+#GameKey{border-bottom:1px dashed #d3d3d3;width:750px;margin:0 auto 15px;}
+#GameKey ul{float:left;width:750px;}
+#GameKey ul li{float:left;height:32px;text-align:left;line-height:24px;white-space:nowrap;font-size:12px;padding-right:5px;}
+#GameKey ul li span{float:left;padding:0 3px 0 0px;}
+#GameKey ul li span.PlayKey{margin:0 5px 0 0}
