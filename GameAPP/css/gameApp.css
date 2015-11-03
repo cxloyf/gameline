@@ -213,11 +213,10 @@ html {
 .playrecord {
     display: inline-block;
     position: fixed;
-    text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     left: 90px;
-    right: 40px;
+    right: 25px;
 }
 
 .fh-refresh {

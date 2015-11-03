@@ -2,8 +2,10 @@ var gameList = new LinkedList();
 var playRecordIndex = "0";
 var playRecordStorage = "playRecordStorage";
 var tm_listTopPaddingT = 10;
-
+var playRecordWidth = 316;
+var PlayRecordLength;
 function SetPlayRecord(x, htmlEl) {
+    PlayRecordLength = playRecordWidth;
     showHeader();
     for (var i = 0; i < gameList.length; i++) {
         if (htmlEl != gameList.get(i)) {
@@ -27,6 +29,12 @@ function SetPlayRecord(x, htmlEl) {
     $('div.playrecord').html("");
     for (var i = 0; i < gameList.length; i++) {
         $("#playrecord").append(gameList.get(i));
+        PlayRecordLength = PlayRecordLength - $(".playrecordName")[i].offsetWidth;
+        if(PlayRecordLength<0)
+        {
+            $(".playrecordName")[i].style.display="none";
+            break;
+        }
     }
 
     bdc.external.appSend('local/storage/disk/set', {
@@ -43,18 +51,27 @@ function SetPlayRecord(x, htmlEl) {
 }
 
 function GetPlayRecord() {
+    PlayRecordLength = playRecordWidth;
     bdc.external.appSend('local/storage/disk/get', {key: playRecordStorage}, function (result) {
         var bError = result.error === 0;
         var bFound = result.body.found === true;
         $('div.playrecord').html("");
         if (bError && bFound) {
             temp = stringToList(result.body.value);
-            for (var i = 0; i < gameList.length; i++) {
-                $("#playrecord").append(gameList.get(i));
-            }
             if(gameList.length!=0){
                 showHeader();
             }
+            for (var i = 0; i < gameList.length; i++) {
+                $("#playrecord").append(gameList.get(i));
+                PlayRecordLength = PlayRecordLength - $(".playrecordName")[i].offsetWidth;
+                if(PlayRecordLength<0)
+                {
+                    $(".playrecordName")[i].style.display="none";
+                    break;
+                }
+
+            }
+
         }
     })
 }

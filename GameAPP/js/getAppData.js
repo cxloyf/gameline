@@ -74,8 +74,8 @@ $(document).ready(function () {
 
         var data = {
             way: "pop_window",
-            //url: "http://localhost:8080/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height"),
-            url     :"http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id="+$(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height"),
+            url: "http://localhost:8080/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height"),
+            //url     :"http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id="+$(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height"),
             //url     :"http://localhost:8080/GameFloatWindows/FloatWindow.html?id=43&width=960&height=600",
             source_info: {
                 input_string: JSON.stringify({
