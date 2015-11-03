@@ -259,17 +259,17 @@ html {
 
 .tm_list li {
     float: left;
-    width: 72px;
+    width: 96px;
     height: 90px;
-    padding-top: 0px;
+
     display: inline;
     line-height: 22px;
     text-align: center;
-
     overflow: hidden;
+    padding-top: 0;
     position: relative;
-    margin-right: 14px;
-    margin-left: 22px;
+    margin-right: 2px;
+    margin-left: 10px;
     margin-bottom: 13px;
 }
 
@@ -277,7 +277,7 @@ html {
     display: block;
     width: 72px;
     height: 72px;
-    margin: 0 ;
+    margin: 0 auto ;
 }
 
 
@@ -342,7 +342,7 @@ a:active {
 }
 
  .more_game_text_a{
-    margin-top: 7px;
+    padding-top: 7px;
      display: block;
     line-height:12px;
     font-size: 12px;

@@ -44,6 +44,10 @@ var DataReport = {
             ]
         ];
         report(reportData, function(oData){
+            if(oData.error == 0)
+            {
+                alert("hello");
+            }
         });
     }
 };/**
