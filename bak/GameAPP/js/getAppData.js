@@ -66,7 +66,6 @@ function ajax() {
 
 $(document).ready(function () {
     ajax();
-    hideHeader();
     GetPlayRecord();
 
 
@@ -83,7 +82,6 @@ $(document).ready(function () {
                     title: $(this)[0].getAttribute("name"),
                     height: String(parseInt($(this)[0].getAttribute("media_height")) + bannerHeight),
                     width: $(this)[0].getAttribute("media_width"),
-                    source:$(this)[0].getAttribute("source"),
                     showmax: 0,
                     showmin: 1,
                     showresize: 1,
@@ -95,21 +93,17 @@ $(document).ready(function () {
 
         bdc.external.appSend('local/net/open_url', data || {}, function () {
         });
-        DataReport.clickGameIcon("1",  $(this)[0].getAttribute("index"));
+        //alert("hello");
         var name = $(this)[0].getAttribute("name");
-        var htmlEl = '<a  class=playrecordName onclick="playRecordWindow($(this))" sid="' + $(this)[0].getAttribute("index") +'" info=' + JSON.stringify(data) + '>'+name+'</a>';
+        var htmlEl = '<a  class=playrecordName onclick="playRecordWindow($(this))" info=' + JSON.stringify(data) + '>'+name+'</a>';
         SetPlayRecord($(this), htmlEl);
-
     });
 
 
 });
 	
 	
-	function replaceBtn(){
-        ajax();
-        DataReport.clickReplaceBtn();
-    }
+	
 	
 	
 	

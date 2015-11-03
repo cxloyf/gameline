@@ -2,13 +2,9 @@
             margin: 0;
             padding: 0;
         }
-		/* 默认不显示下划线，保持页面简洁 */
-		ins, a {
-			text-decoration: none;
-			color: black;
-		}
 		html{overflow-x:hidden}
 		html{overflow-y:hidden}
+       
 		.media
 		{
 			width: 100%;
@@ -90,15 +86,7 @@
 		.stateBut:active {
 			background-position: -156px 0;
 		}
-.gameGuidance{
-	font-size: 12px;
-	display: inline-block;
-	float:right;
-	margin-top: 14px;
-	padding-right: 12px;
-	position: relative;
-	cursor: pointer;
-}
+
 
 		.pullDownBanner{
 		/* position: relative; */
@@ -112,9 +100,6 @@
             margin: 0;
 			display: block;
 			background: #FFFFFF;
-		}
-		.contactMethod{
-			padding-top: 10px;
 		}
 		
 		.intro_url {

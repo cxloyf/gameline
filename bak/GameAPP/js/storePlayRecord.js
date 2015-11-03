@@ -43,6 +43,7 @@ function SetPlayRecord(x, htmlEl) {
 }
 
 function GetPlayRecord() {
+    hideHeader();
     bdc.external.appSend('local/storage/disk/get', {key: playRecordStorage}, function (result) {
         var bError = result.error === 0;
         var bFound = result.body.found === true;
@@ -52,9 +53,15 @@ function GetPlayRecord() {
             for (var i = 0; i < gameList.length; i++) {
                 $("#playrecord").append(gameList.get(i));
             }
-            if(gameList.length!=0){
+            if(gameList.length==0){
+                hideHeader();
+            }
+            else{
                 showHeader();
             }
+        }
+        else{
+            hideHeader();
         }
     })
 }
@@ -74,18 +81,15 @@ function clearDiskRecord() {
             //alert(playRecordIndex);
         }
     })
-    DataReport.clickClearRecord();
 }
 
 function playRecordWindow(x) {
     temp = $(x)[0].getAttribute("info");
-    sid = $(x)[0].getAttribute("sid");
     data = JSON.parse(temp);
     bdc.external.appSend('local/net/open_url', data || {}, function () {
     });
-    var htmlEl = '<a  class=playrecordName onclick="playRecordWindow($(this))" sid="' + $(x)[0].getAttribute("sid")+ '" info=' + JSON.stringify(data) + '>' + $(x)[0].innerHTML + '</a>'
+    var htmlEl = '<a  class=playrecordName onclick="playRecordWindow($(this))" info=' + JSON.stringify(data) + '>' + $(x)[0].innerHTML + '</a>'
     SetPlayRecord(x, htmlEl);
-    DataReport.clickGameIcon("2",$(x)[0].getAttribute("sid"));
 }
 
 function stringToList(x) {
@@ -106,7 +110,6 @@ function showHeader(){
     $("#nobr").css('display','block');
     $("#clearTip").css('display','none');
     $("#playRecordBar").css('display','block');
-    //$("#playRecordBar").slideDown("slow");
     topValue = $("#playRecordBar").height()+$("#header").height()+tm_listTopPaddingT;
     $("#game").css('margin-top',topValue);
     $("#playRecordText").innerHTML="ÎÒÍæ¹ýµÄ:";
@@ -119,19 +122,13 @@ function animation(){
 
     setTimeout(function(){
         hideHeader();
-        GetPlayRecord();
     },1500)
+
 }
 
 function hideHeader(){
     $("#playRecordText").innerHTML="";
-    //$("#playRecordBar").slideUp("slow");
     $("#playRecordBar").css('display','none');
     topValue = $("#header").height()+tm_listTopPaddingT;
     $("#game").css('margin-top',topValue);
-}
-
-
-function moreGame(){
-    DataReport.clickMoreGameLink( $("#more_game_text_a").text(), $("#more_game_text_a").attr("href"));
 }

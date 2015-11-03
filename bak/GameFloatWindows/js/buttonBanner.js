@@ -52,10 +52,6 @@ function stateButClick() {
         bdc.external.appSend('local/ui/set_window_size', data || {}, function () {
         });
 
-        if(type == "unity3d"){
-            $("#mediaLayout").children("embed").css("background","red");
-        }
-        DataReport.clickOperationButton("2");
     } else {
         $("#stateBut").attr("switch","0") ;
         $("#stateBut").css("background", 'url("img/pullDown.png") 0 0');
@@ -66,12 +62,8 @@ function stateButClick() {
         };
         bdc.external.appSend('local/ui/set_window_size', data || {}, function () {
         });
-        if(type == "unity3d"){
-            $("#mediaLayout").children("embed").css("background","yellow");
-        }
-        DataReport.clickOperationButton("1");
-    }
 
+    }
 }
 
 
@@ -119,12 +111,7 @@ function stateButOut(){
 }
 //////////////////////////////////////////////////////////
 function refreshClick() {
-    if(type != "unity3d"){
-        $("#media")[0].src = $("#media")[0].src;
-    }else{
-        unity3dDetection(MediaUrl);
-    }
-    DataReport.clickRefreshButton();
+    $("#media")[0].src = $("#media")[0].src;
 }
 
 function voiceClick() {
@@ -134,8 +121,6 @@ function voiceClick() {
         voiceOnMouseUp();
         bdc.external.appSend('local/basic/set_mute', {mute: 1}, function () {
         });
-        DataReport.clickVoiceButton("1");
-
     }
     else {
         $("#voice").attr("value", "turnOn");
@@ -143,7 +128,6 @@ function voiceClick() {
         voiceOnMouseUp();
         bdc.external.appSend('local/basic/set_mute', {mute: 0}, function () {
         });
-        DataReport.clickVoiceButton("2");
     }
 
 }
@@ -184,14 +168,10 @@ function voiceOnMouseOut() {
     }
 }
 
-function clickGameGuidance(){
-    var url = "https://www.baidu.com/s?wd="+$("#gameGuidance").attr("name")+"¹¥ÂÔ";
-    $("#gameGuidance").attr("href",url);
-    DataReport.clickGameGuidanceLink();
-}
 
 
-//var GUID;
+
+
 $(document).ready(function () {
     $("#voice").attr("value", "turnOn");
     setInterval(function (){
@@ -208,5 +188,6 @@ $(document).ready(function () {
             }
         });
         },1000)
+
 
 })

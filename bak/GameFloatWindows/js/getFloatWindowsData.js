@@ -1,6 +1,4 @@
 var keyboardHeight=0;
-var MediaUrl;
-var type;
 
 function getQueryString(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
@@ -60,7 +58,7 @@ function ajax() {
 					mediaBody(json.result.data.swf_url, json.result.data.media_width, json.result.data.media_height);
                     $("#GameKey").append(gameKey);
                     $("#intro_url").html("”Œœ∑¿¥‘¥£∫"+json.result.data.intro_url);
-                    $("#gameGuidance").attr("name",json.result.data.name);
+
 
                     (function () {
                         var d = document.getElementById('pullDownBanner');
@@ -91,14 +89,13 @@ function setMediaLayout(width,height){
 
 
 function mediaBody(media_url,width,height){
-    MediaUrl = media_url;
 	if(media_url == null)
 	{
 		media_url = "http://sxiao.4399.com/4399swf/upload_swf/ftp10/weijianp/20130422/1/mineclone.unity3d";
 	}
 	var index1=media_url.lastIndexOf(".");
 	var index2=media_url.length;
-	type=media_url.substring(index1+1,index2);
+	var type=media_url.substring(index1+1,index2);	
 	if(type != "unity3d"){
 		var meidaContent = '<iframe id="media" class="media" src="' + media_url + '" width="100%" height=' + height + '></iframe>';
 		//var meidaContent = '<embed id="media"  class="media" src="'+media_url+'" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="100%" height='+height+' allowscriptaccess="always" allownetworking="all">';
