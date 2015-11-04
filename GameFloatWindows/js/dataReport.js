@@ -28,10 +28,10 @@ var DataReport = {
         report(reportData, function(oData){
         });
     }
-    ,clickRefreshButton: function(action) {//点击小游戏icon
+    ,clickRefreshButton: function() {//点击小游戏icon
         var reportData = [1322,
             [
-                {key:2408,value:action,type:"uin32"}//操作指南点击动作
+                {key:2408,value:"1",type:"uin32"}//操作指南点击动作
             ]
         ];
         report(reportData, function(oData){
@@ -46,7 +46,7 @@ var DataReport = {
         report(reportData, function(oData){
             if(oData.error == 0)
             {
-                alert("hello");
+                //alert("hello");
             }
         });
     }

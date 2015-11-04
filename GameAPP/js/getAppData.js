@@ -1,10 +1,6 @@
     var offset = 0;
     var bannerHeight = 32 + 8;
 
-    function requestTimeOutAction() {
-        alert("timeout");
-        history.go(0);
-    }
     function ajax() {
 
 
@@ -16,16 +12,15 @@
             data: null,
             timeout:3000,
             success: function (msg) {
-                doResult(msg);
+                requestAppData(msg);
             },
             error: function (xhr,errorInfo,ex) {
-                alert(errorInfo);
                 history.go(0);
             }
         });
     }
 
-        function doResult(json) {
+        function requestAppData(json) {
             if (json.code == 0 && json.result.data.length) {
                 $('ul.tm_list').html("");
                 for (var i = 0; i < json.result.data[0].length; i++) {

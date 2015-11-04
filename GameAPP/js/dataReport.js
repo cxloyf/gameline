@@ -10,11 +10,11 @@ var makeApi = function (sApi) {
 var report = makeApi('cloud/statistics/report');
 
 var DataReport = {
-    clickGameIcon: function(source, sid) {//µã»÷Ğ¡ÓÎÏ·icon£¬ÓÎÏ·¼ÇÂ¼Ò²ÒªËãÉÏ
+    clickGameIcon: function(source, sid) {//ç‚¹å‡»å°æ¸¸æˆiconï¼Œæ¸¸æˆè®°å½•ä¹Ÿè¦ç®—ä¸Š
         var reportData = [1322,
             [
                 {key:2404,value:source,type:"int32"}
-                ,{key:2405,value:sid,type:"uin64"}//iconµÄindex
+                ,{key:2405,value:sid,type:"uin64"}//iconçš„index
             ]
         ];
         report(reportData, function(oData){
@@ -26,7 +26,7 @@ var DataReport = {
     clickClearRecord: function() {
         var reportData = [1322,
             [
-                {key:2412,value:"1",type:"uin32"}//Çå³ıµã»÷¶¯×÷
+                {key:2412,value:"1",type:"uin32"}//æ¸…é™¤ç‚¹å‡»åŠ¨ä½œ
             ]
         ];
         report(reportData, function(oData){
@@ -38,7 +38,7 @@ var DataReport = {
     clickReplaceBtn: function () {
         var reportData = [1322,
             [
-                {key:2413,value:"1",type:"uin32"}//»»Ò»»»µã»÷¶¯×÷
+                {key:2413,value:"1",type:"uin32"}//æ¢ä¸€æ¢ç‚¹å‡»åŠ¨ä½œ
             ]
         ];
         report(reportData, function(oData){
@@ -48,7 +48,7 @@ var DataReport = {
     clickMoreGameLink: function(text, url){
         var reportData = [1322,
             [
-                {key:2414,value:text,type:"string"}
+                {key:2414,value:text,type:"wstring"}
                 ,{key:2415,value:url,type:"string"}
             ]
         ];

@@ -119,12 +119,12 @@ function stateButOut(){
 }
 //////////////////////////////////////////////////////////
 function refreshClick() {
+    DataReport.clickRefreshButton();
     if(type != "unity3d"){
         $("#media")[0].src = $("#media")[0].src;
     }else{
         unity3dDetection(MediaUrl);
     }
-    DataReport.clickRefreshButton();
 }
 var voicePngValue=" 0 0";
 function voiceClick() {

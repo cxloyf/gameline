@@ -126,7 +126,7 @@ function showHeader(){
     //$("#playRecordBar").slideDown("slow");
     topValue = $("#playRecordBar").height()+$("#header").height()+tm_listTopPaddingT;
     $("#game").css('margin-top',topValue);
-    $("#playRecordText").innerHTML="ÎÒÍæ¹ýµÄ:";
+    $("#playRecordText").innerHTML="æˆ‘çŽ©è¿‡çš„:";
 }
 
 function animation(){
