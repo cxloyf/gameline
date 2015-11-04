@@ -48,12 +48,6 @@
                     $("#tm_list").append(htmlEle);
                 }
                 $("#game").height($("#tm_list").height());
-
-                bdc.external.appSend('local/storage/disk/set', {
-                    key: "GameRefreshCount",
-                    value: "1",
-                    expire_time: "0"
-                }, function (result){})
             }
             //--
             offset++;
@@ -85,8 +79,7 @@
                         showmin: 1,
                         showresize: 0,
                         showtop: 0,
-                        showaudio: 0,
-                        backtoapp:1
+                        showaudio: 0
                     })
                 }
             };

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jssdk-v2.js"></script>
+    <script type="text/javascript" src="js/LinkedList.js"></script>
+    <script type="text/javascript" src="js/storePlayRecord.js"></script>
+    <script type="text/javascript" src="js/getAppData.js"></script>
+    <script type="text/javascript" src="js/dataReport.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/gameApp.css"/>
+</head>
+
+<body>
+<div class="header" id="header">
+        <img src="img/gameTitle.png" alt="小游戏" class="gameTitleImg" id="gameTitleImg">
+</div>
+
+<div class="playRecordBar" id="playRecordBar">
+    <div id="clearTip" class="clearTip">记录已清空</div>
+    <nobr id="nobr" class="nobr">
+        <div class="playRecordText" id="playRecordText">我玩过的:</div>
+        <div class="playrecord" id="playrecord"></div>
+        <!--<div style="height:100px; width:1px; border-left:1px #000 solid"></div>-->
+        <!--<div class="playrecord"><a>nihao7677777777576ghfhfhfhfgh&#9</a> <a>nihao7677777777576ghfhfhfhfgh&#9</a> <a>nihao7677777777576ghfhfhfhfgh&#9</a> <a>nihao7677777777576ghfhfhfhfgh&#9</a></div>-->
+        <span class="fh-refresh" id="fh-refresh" onclick="clearDiskRecord()"></span>
+    </nobr>
+</div>
+
+
+<div class="game" id="game">
+    <ul class="tm_list" id="tm_list">
+    </ul>
+</div>
+<div class="box">
+    <span id="replace_btn" class="replace_btn" onclick="replaceBtn()"></span>
+    <a class="more_game_text_a" id="more_game_text_a"
+       target="_blank" onclick="moreGame()">更多小游戏请猛戳这里</a>
+</div>
+<script>
+    bdc.app.init({
+        appId: 4019
+    });
+    bdc.app.ready();
+
+</script>
+</body>
+</html>
