@@ -1,9 +1,7 @@
     var offset = 0;
     var bannerHeight = 32 + 8;
-
+    var GameRefreshCount=0;
     function ajax() {
-
-
         var url = "http://172.17.181.135:8264/games?offset=" + offset;
         $.ajax({
             url: url,
@@ -14,8 +12,21 @@
             success: function (msg) {
                 requestAppData(msg);
             },
-            error: function (xhr,errorInfo,ex) {
-                history.go(0);
+
+            error: function (XMLHttpRequest,textStatus,errorThrown) {
+                if(textStatus == "timeout") {
+                    history.go(0);
+                }
+                else if(textStatus == "error") {
+                    handleRequestErrorMessage();
+                }
+                else if(textStatus == "notmodified"){
+                    alert("notmodified");
+                }
+                else if(textStatus == "parsererror"){
+                }
+
+
             }
         });
     }
@@ -91,12 +102,44 @@
         DataReport.clickReplaceBtn();
     }
 
-    $("img")
-        .error(function () {
-            alert("img-2");
-        })
-
-
     function imgErrorLoad(x) {
         x.setAttribute("src", "img/baiduIcon.png");
+    }
+
+    function handleRequestErrorMessage(){
+        bdc.external.appSend('local/storage/disk/get',{key: "GameRefreshCount"}, function (result) {
+            var bError = result.error === 0;
+            var bFound = result.body.found === true;
+            if (bError && bFound) {
+                GameRefreshCount = parseInt(result.body.value);
+                if(GameRefreshCount >= 5){
+                    bdc.external.appSend('local/storage/disk/set', {
+                        key: "GameRefreshCount",
+                        value: "0",
+                        expire_time: "0"
+                    }, function (result) {})
+                }
+                else{
+                    GameRefreshCount++;
+                    bdc.external.appSend('local/storage/disk/set', {
+                        key: "GameRefreshCount",
+                        value: GameRefreshCount.toString(),
+                        expire_time: "0"
+                    }, function (result) {})
+                    history.go(0);
+                }
+            }
+            else{
+                bdc.external.appSend('local/storage/disk/set', {
+                    key: "GameRefreshCount",
+                    value: "1",
+                    expire_time: "0"
+                }, function (result) {
+                    if(result.error ==0)
+                        history.go(0);
+                })
+
+            }
+        })
+
     }

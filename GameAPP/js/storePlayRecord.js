@@ -149,6 +149,19 @@ function hideHeader(){
 }
 
 
+function getQueryString(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return unescape(r[2]);
+    }
+    return null;
+}
+
+
 function moreGame(){
-    DataReport.clickMoreGameLink( $("#more_game_text_a").text(), $("#more_game_text_a").attr("href"));
+    var tn = getQueryString("tn");
+    var url = "https://www.baidu.com/s?wd=小游戏&tn="+tn;
+    $("#more_game_text_a").attr("href",url);
+    DataReport.clickMoreGameLink( $("#more_game_text_a").text(), url);
 }
