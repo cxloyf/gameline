@@ -2,7 +2,7 @@ var gameList = new LinkedList();
 var playRecordIndex = "0";
 var playRecordStorage = "playRecordStorage";
 var tm_listTopPaddingT = 10;
-var playRecordWidth = 316;
+var playRecordWidth = 317;
 var PlayRecordLength;
 function SetPlayRecord(x, htmlEl) {
     PlayRecordLength = playRecordWidth;
@@ -29,7 +29,7 @@ function SetPlayRecord(x, htmlEl) {
     $('div.playrecord').html("");
     for (var i = 0; i < gameList.length; i++) {
         $("#playrecord").append(gameList.get(i));
-        PlayRecordLength = PlayRecordLength - $(".playrecordName")[i].offsetWidth;
+        PlayRecordLength = PlayRecordLength - $(".playrecordName")[i].offsetWidth-20;
         if(PlayRecordLength<0)
         {
             $(".playrecordName")[i].style.display="none";
@@ -63,7 +63,7 @@ function GetPlayRecord() {
             }
             for (var i = 0; i < gameList.length; i++) {
                 $("#playrecord").append(gameList.get(i));
-                PlayRecordLength = PlayRecordLength - $(".playrecordName")[i].offsetWidth;
+                PlayRecordLength = PlayRecordLength - $(".playrecordName")[i].offsetWidth-20;
                 if(PlayRecordLength<0)
                 {
                     $(".playrecordName")[i].style.display="none";
