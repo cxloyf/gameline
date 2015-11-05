@@ -191,24 +191,30 @@ function voiceOnMouseOut() {
 //var GUID;
 $(document).ready(function () {
     $("#voice").attr("value", "turnOn");
+    voiceIsMute();
     setInterval(function (){
-        bdc.external.appSend('local/basic/is_mute', {}, function (result) {
-            if (result.error == 0) {
-                if (result.body.mute == "1") {
-                    var path =  'url("img/turnOff.png")' + voicePngValue;
-                    $("#voice").attr("value", "turnOff");
-                    $("#voice").css("background", path);
-                }
-                else if (result.body.mute == "0") {
-                    var path =  'url("img/turnOn.png")' + voicePngValue;
-                    $("#voice").attr("value", "turnOn");
-                    $("#voice").css("background",path);
-                }
-            }
-        });
+       voiceIsMute();
         },1000)
 
 })
+
+
+function voiceIsMute(){
+    bdc.external.appSend('local/basic/is_mute', {}, function (result) {
+        if (result.error == 0) {
+            if (result.body.mute == "1") {
+                var path =  'url("img/turnOff.png")' + voicePngValue;
+                $("#voice").attr("value", "turnOff");
+                $("#voice").css("background", path);
+            }
+            else if (result.body.mute == "0") {
+                var path =  'url("img/turnOn.png")' + voicePngValue;
+                $("#voice").attr("value", "turnOn");
+                $("#voice").css("background",path);
+            }
+        }
+    });
+}
 /////////////////////////////////////////////////////
 function clickGameGuidance(){
     var tn = getQueryString("tn");

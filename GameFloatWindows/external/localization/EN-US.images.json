@@ -1,0 +1,19 @@
+{
+  "info": {
+    "base_url": "https://api.gamelocalizer.com/assets/ff17e92db53d2fcff1f2f794ba353dff/1544a9c06646b042c95998a93f180965/",
+    "sheet_name": "images",
+    "project_name": "300 game",
+    "language": "EN-US",
+    "language_full": "US English",
+    "unix_time_created": 1393293381,
+    "base_only": false,
+    "is_base": false
+  },
+  "sheet": {
+    "introscreen_logo": "EN-US.0fdeeab4c3790921b0b89a69d32a80c1.png",
+    "www_credits_img": "EN-US.83a36dfd5257c8bb82e51d14503a6737.png",
+    "www_unity_splash_img": "EN-US.67b0da51f95bea061f620dd97af75852.png",
+    "www_google_play_badge_big": "EN-US.e3b78a5c487a5da4adc0ef9a9ca8f15e.png",
+    "www_apple_download_badge_big": "EN-US.3fdf0ebdccf65d1fcdae3c8db15f32cb.png"
+  }
+}
