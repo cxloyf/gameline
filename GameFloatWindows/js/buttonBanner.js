@@ -216,3 +216,5 @@ function clickGameGuidance(){
     $("#gameGuidance").attr("href",url);
     DataReport.clickGameGuidanceLink();
 }
+
+document.onmousewheel = function() {return false;}
