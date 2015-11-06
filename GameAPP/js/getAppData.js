@@ -1,6 +1,12 @@
     var offset = 0;
     var bannerHeight = 32 + 8;
     var GameRefreshCount=0;
+
+    bdc.app.init({
+        appId: 1013
+    });
+    bdc.app.ready();
+
     function ajax() {
         var url = "http://172.17.181.135:8264/games?offset=" + offset;
         $.ajax({

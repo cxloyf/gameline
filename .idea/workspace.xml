@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1d94d40-eeed-4a58-b685-00d607b6f8a2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData.js" afterPath="$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameAPP/GameApp.html" afterPath="$PROJECT_DIR$/GameAPP/GameApp.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameAPP/js/getAppData.js" afterPath="$PROJECT_DIR$/GameAPP/js/getAppData.js" />
     </list>
     <ignored path="root.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getFloatWindowsData.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getFloatWindowsData.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.509839">
+            <state vertical-scroll-proportion="3.8">
               <caret line="54" column="62" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
               <folding>
                 <element signature="n#!!block;n#setMediaLayout#0" expanded="false" />
@@ -60,12 +60,43 @@
         <entry file="file://$PROJECT_DIR$/GameAPP/js/getAppData.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
+                <element signature="n#!!block;n#ajax#0" expanded="false" />
                 <element signature="n#!!block;n#replaceBtn#0" expanded="false" />
                 <element signature="n#!!block;n#imgErrorLoad#0" expanded="false" />
                 <element signature="n#!!block;n#handleRequestErrorMessage#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataReport.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GameAPP/js/dataReport.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="10" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="storePlayRecord.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GameAPP/js/storePlayRecord.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="166" column="1" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameApp.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GameAPP/GameApp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.35650623">
+              <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,7 +144,6 @@
         <option value="$PROJECT_DIR$/GameAPP/js/jssdk-v2.js" />
         <option value="$PROJECT_DIR$/GameAPP/js/dataReport.js" />
         <option value="$PROJECT_DIR$/GameAPP/css/gameApp.css" />
-        <option value="$PROJECT_DIR$/GameAPP/GameApp.html" />
         <option value="$PROJECT_DIR$/GameAPP/js/storePlayRecord.js" />
         <option value="$PROJECT_DIR$/GameFloatWindows/FloatWindow.html" />
         <option value="$PROJECT_DIR$/GameFloatWindows/css/gamekey.css" />
@@ -127,8 +157,9 @@
         <option value="$PROJECT_DIR$/GameFloatWindows/FloatWindow_Own.html" />
         <option value="$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData_Own.js" />
         <option value="$PROJECT_DIR$/GameFloatWindows/js/emulator.js" />
-        <option value="$PROJECT_DIR$/GameAPP/js/getAppData.js" />
         <option value="$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData.js" />
+        <option value="$PROJECT_DIR$/GameAPP/js/getAppData.js" />
+        <option value="$PROJECT_DIR$/GameAPP/GameApp.html" />
       </list>
     </option>
   </component>
@@ -140,8 +171,7 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="1" />
+    <option name="y" value="2" />
     <option name="width" value="1364" />
     <option name="height" value="726" />
   </component>
@@ -336,7 +366,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1364" height="726" extended-state="0" />
+    <frame x="0" y="2" width="1364" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -372,7 +402,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -427,6 +457,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding>
+            <element signature="n#!!block;n#ajax#0" expanded="false" />
             <element signature="n#!!block;n#replaceBtn#0" expanded="false" />
             <element signature="n#!!block;n#imgErrorLoad#0" expanded="false" />
             <element signature="n#!!block;n#handleRequestErrorMessage#0" expanded="false" />
@@ -585,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GameAPP/js/dataReport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GameAPP/js/jquery-2.1.4.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6785714">
@@ -606,14 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GameAPP/GameApp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -683,14 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GameAPP/js/storePlayRecord.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.354839">
-          <caret line="166" column="1" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/小游戏标题.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -753,18 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GameAPP/js/getAppData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!block;n#replaceBtn#0" expanded="false" />
-            <element signature="n#!!block;n#imgErrorLoad#0" expanded="false" />
-            <element signature="n#!!block;n#handleRequestErrorMessage#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GameFloatWindows/js/buttonBanner.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.7">
@@ -775,11 +771,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.509839">
+        <state vertical-scroll-proportion="3.8">
           <caret line="54" column="62" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
           <folding>
             <element signature="n#!!block;n#setMediaLayout#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameAPP/js/dataReport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameAPP/js/storePlayRecord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="166" column="1" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameAPP/js/getAppData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#ajax#0" expanded="false" />
+            <element signature="n#!!block;n#replaceBtn#0" expanded="false" />
+            <element signature="n#!!block;n#imgErrorLoad#0" expanded="false" />
+            <element signature="n#!!block;n#handleRequestErrorMessage#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameAPP/GameApp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35650623">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
