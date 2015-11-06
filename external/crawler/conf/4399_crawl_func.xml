@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config charset="utf-8">
+	<!-- params: String source, String category, String gameName, String gameImg, String introUrl, String rank -->
+	<function name="crawl-4399-single">
+		<return>
+			<try>
+				<body>
+					<empty>
+						<var-def name="infoCategory"></var-def>
+						<var-def name="infoSize"></var-def>
+						<var-def name="infoDate"></var-def>
+						<var-def name="infoTopics"></var-def>
+						<var-def name="infoIntro"></var-def>
+						<var-def name="infoMethod">unknown</var-def>
+						
+						<var-def name="introHtml">
+							<html-to-xml>
+								<http url="${introUrl}" charset="gbk" />
+							</html-to-xml>
+						</var-def>
+						<var-def name="gameUrlPartial">
+							<xpath expression="//body[@id='skinbody']//div[@class='pag_img']//a[@class='play']/@href">
+								<var name="introHtml" />
+							</xpath>
+						</var-def>
+						<var-def name="gameUrl">
+							<template>${gameUrlPartial.isEmpty() ? "" : sys.fullUrl(introUrl,gameUrlPartial)}</template>
+						</var-def>
+						
+						<case>
+							<if condition='${!gameUrl.isEmpty()}'>
+								<var-def name="gameHtml">
+									<html-to-xml>
+										<http url="${gameUrl}" charset="gbk" />
+									</html-to-xml>
+								</var-def>
+								
+								<var-def name="infoHtml">
+									<xpath expression="//body[@id='skinbody']//div[@class='pag_tex']"><var name="introHtml" /></xpath>
+								</var-def>
+								<case>
+									<if condition='${!infoHtml.isEmpty()}'>
+										<var-def name="infoCategory">
+											<xpath expression="//div[@class='pag_cf']/p[1]/a[1]/text()"><var name="infoHtml" /></xpath>
+										</var-def>
+										<var-def name="infoSizeDateRaw">
+											<xpath expression="//div[@class='pag_cf']/p[1]/text()"><var name="infoHtml" /></xpath>
+										</var-def>
+										<var-def name="infoSize">
+											<template><![CDATA[${infoSizeDateRaw.toString().trim().split("\\s+")[1].substring(3)}]]></template>
+										</var-def>
+										<var-def name="infoDate">
+											<template><![CDATA[${infoSizeDateRaw.toString().trim().split("\\s+")[2].substring(3)}]]></template>
+										</var-def>
+										<var-def name="infoTopicsRaw">
+											<xpath expression="//div[@class='pag_cf']/p[last()]/a//text()"><var name="infoHtml" /></xpath>
+										</var-def>
+										<var-def name="infoTopics">
+											<template><![CDATA[${infoTopicsRaw.toString().trim().replaceAll("\\s+"," ")}]]></template>
+										</var-def>
+										<var-def name="infoIntroRaw">
+											<xpath expression="//div[@id='introduce2']//text()"><var name="infoHtml" /></xpath>
+										</var-def>
+										<var-def name="infoIntro">
+											<template><![CDATA[${infoIntroRaw.toString().trim().replace("\n","")}]]></template>
+										</var-def>
+										<var-def name="infoMethod">pag-tex</var-def>
+									</if>
+								</case>
+							</if>
+							<else>
+								<var-def name="gameUrl"><var name="introUrl" /></var-def>
+								<var-def name="gameHtml"><var name="introHtml" /></var-def>
+								<script><![CDATA[
+									print("    do not have intro url: name=" + gameName + ", game_url=" + gameUrl);
+								]]></script>
+								
+								<var-def name="infoHtml1">
+									<xpath expression="//body[@id='styleBackground']//div[@class='game_fl']"><var name="gameHtml" /></xpath>
+								</var-def>
+								<var-def name="infoHtml2">
+									<xpath expression="//div[@id='GameInfo']"><var name="gameHtml" /></xpath>
+								</var-def>
+								<var-def name="infoHtml3">
+									<xpath expression="//body[@id='skinbody']//div[@class='g-info']"><var name="gameHtml" /></xpath>
+								</var-def>
+								<case>
+									<if condition='${!infoHtml1.isEmpty()}'>
+										<var-def name="infoCategory">
+											<xpath expression="div/a[2]/text()"><var name="infoHtml1" /></xpath>
+										</var-def>
+										<var-def name="infoSizeDateRaw">
+											<xpath expression="//div[@class='game_fl']/text()"><var name="infoHtml1" /></xpath>
+										</var-def>
+										<var-def name="infoSize">
+											<template><![CDATA[${infoSizeDateRaw.toString().trim().split("\\s+")[1]}]]></template>
+										</var-def>
+										<var-def name="infoDate">
+											<template><![CDATA[${infoSizeDateRaw.toString().trim().split("\\s+")[0]}]]></template>
+										</var-def>
+										<var-def name="infoTopicsRaw">
+											<xpath expression="div/a[position()>2]//text()"><var name="infoHtml1" /></xpath>
+										</var-def>
+										<var-def name="infoTopics">
+											<template><![CDATA[${infoTopicsRaw.toString().trim().replaceAll("\\s+"," ")}]]></template>
+										</var-def>
+										<var-def name="infoMethod">game_fl</var-def>
+									</if>
+									<if condition='${!infoHtml2.isEmpty()}'>
+										<var-def name="infoCategory">
+											<xpath expression="div/li[2]/a/text()"><var name="infoHtml2" /></xpath>
+										</var-def>
+										<var-def name="infoSizeRaw">
+											<xpath expression="div/li[4]/text()"><var name="infoHtml2" /></xpath>
+										</var-def>
+										<var-def name="infoSize">
+											<template><![CDATA[${infoSizeRaw.toString().trim()}]]></template>
+										</var-def>
+										<var-def name="infoDateRaw">
+											<xpath expression="div/li[3]/text()"><var name="infoHtml2" /></xpath>
+										</var-def>
+										<var-def name="infoDate">
+											<template><![CDATA[${infoDateRaw.toString().trim()}]]></template>
+										</var-def>
+										<var-def name="infoTopicsRaw">
+											<xpath expression="div/li[5]/a/text()"><var name="infoHtml2" /></xpath>
+										</var-def>
+										<var-def name="infoTopics">
+											<template><![CDATA[${infoTopicsRaw.toString().trim().replaceAll("\\s+"," ")}]]></template>
+										</var-def>
+										<var-def name="infoMethod">GameInfo</var-def>
+									</if>
+									<if condition='${!infoHtml3.isEmpty()}'>
+										<var-def name="infoCategory">
+											<xpath expression="div/a[2]/text()"><var name="infoHtml3" /></xpath>
+										</var-def>
+										<var-def name="infoSizeDateRaw">
+											<xpath expression="div/text()"><var name="infoHtml3" /></xpath>
+										</var-def>
+										<var-def name="infoSize">
+											<template><![CDATA[${infoSizeDateRaw.toString().trim().split("\\s+")[1]}]]></template>
+										</var-def>
+										<var-def name="infoDate">
+											<template><![CDATA[${infoSizeDateRaw.toString().trim().split("\\s+")[0]}]]></template>
+										</var-def>
+										<var-def name="infoTopicsRaw">
+											<xpath expression="div/a[position()>2]//text()"><var name="infoHtml3" /></xpath>
+										</var-def>
+										<var-def name="infoTopics">
+											<template><![CDATA[${infoTopicsRaw.toString().trim().replaceAll("\\s+"," ")}]]></template>
+										</var-def>
+										<var-def name="infoMethod">g-info</var-def>
+									</if>
+								</case>
+							</else>
+						</case>
+						<case>
+							<if condition='${!infoMethod.toString().equals("unknown")}'>
+								<script><![CDATA[
+									print("    find info from " + infoMethod + ": name=" + gameName + ", game_url=" + gameUrl + ", category=" + infoCategory + ", size=" + infoSize + ", date=" + infoDate + ", topics=" + infoTopics + ", intro=" + infoIntro);
+								]]></script>
+							</if>
+						</case>
+	
+						<var-def name="gameKeyRaw">
+							<xpath expression="//div[@id='GameKey']/ul"><var name="introHtml" /></xpath>
+						</var-def>
+						<script><![CDATA[
+							String s = gameKeyRaw.toString().replaceAll("<div class=\"clear\"/>", "");
+							java.util.regex.Pattern p = java.util.regex.Pattern.compile("<(\\S+) (.*)/>");;
+							java.util.regex.Matcher m = p.matcher(s);
+							String gameKey = m.replaceAll("<$1 $2></$1>");
+						]]></script>
+						<case>
+							<if condition='${gameKey.isEmpty()}'>
+								<script><![CDATA[
+									print("    do not have gamekey: name=" + gameName + ", game_url=" + gameUrl);
+								]]></script>
+							</if>
+						</case>
+	
+						<var-def name="flashInfo">
+							<xpath expression="//div[@id='swfdiv']">
+								<var name="gameHtml" />
+							</xpath>
+						</var-def>
+						
+						<var-def name="serverJsFilePartial">
+							<xpath expression="//head//script[contains(@src,'/js/')][1]/@src">
+								<var name="gameHtml" />
+							</xpath>
+						</var-def>
+						<var-def name="serverJsFile">
+							<template>${serverJsFilePartial.isEmpty() ? "" : sys.fullUrl(gameUrl,serverJsFilePartial)}</template>
+						</var-def>
+						
+						<case>
+							<if condition='${!serverJsFile.isEmpty()}'>
+								<var-def name="serverJsScripts">
+									<http url="${serverJsFile}" charset="gbk" />
+								</var-def>
+								<var-def name="serverUrl">
+									<regexp>
+									    <regexp-pattern>var webServer = \"(\S+)\"</regexp-pattern>
+									    <regexp-source><var name="serverJsScripts"></var></regexp-source>
+									    <regexp-result><template>${_1}</template></regexp-result>
+									</regexp>
+								</var-def>
+							</if>
+							<else>
+								<var-def name="serverUrl"></var-def>
+							</else>
+						</case>
+					
+						<var-def name="gameXml">
+							<template><![CDATA[
+								<Game type="unknown" category="${category}" name="${gameName}" img="${gameImg}" intro_url="${sys.escapeXml(introUrl)}"></Game>
+							]]></template>
+						</var-def>
+						<case>
+							<if condition="${!flashInfo.isEmpty()}">
+								<case>
+									<if condition='${infoCategory.isEmpty()}'>
+										<script><![CDATA[
+											print("    do not have info: name=" + gameName + ", game_url=" + gameUrl);
+										]]></script>
+									</if>
+								</case>
+								
+								<var-def name="jsScript"><xpath expression="//script/text()"><var name="flashInfo" /></xpath></var-def>
+								<script><![CDATA[
+									java.util.regex.Pattern p = null;
+									java.util.regex.Matcher m = null;
+									String type = "unknown";
+									String iframeUrl = "";
+									String swfUrl = "";
+									String swfWidth = "0";
+									String swfHeight = "0";
+									if (jsScript.toString().startsWith("var str1 = ")) {
+										p = java.util.regex.Pattern.compile("^var str1 = '(\\S+)'");
+										m = p.matcher(jsScript.toString());
+										if (m.find()) {
+											type = "swf";
+											String swfUrlRaw = m.group(1);
+											swfUrl = swfUrlRaw;
+											if (!swfUrlRaw.startsWith("http")) {
+												swfUrl = serverUrl + swfUrlRaw;
+											}
+											print("[" + new Date() + "]finish " + type + ": source=" + source + ", category=" + category + ", rank=" + rank + ", name=" + gameName + ", img=" + gameImg + ", intro_url=" + introUrl + ", game_url=" + gameUrl + ", server_url=" + serverUrl + ", swf_url=" + swfUrl);
+										}
+										p = java.util.regex.Pattern.compile("<embed.*width='(\\d+)' height='(\\d+)'");
+										m = p.matcher(jsScript.toString());
+										if (m.find()) {
+											swfWidth = m.group(1);
+											swfHeight = m.group(2);
+										}
+									} else if (jsScript.toString().contains("</iframe>")) {
+										p = java.util.regex.Pattern.compile("src='(\\S+)'");
+										m = p.matcher(jsScript.toString().replaceAll("\"\\+webServer\\+\"", ""));
+										if (m.find()) {
+											String iframeUrlRaw = m.group(1);
+											iframeUrl = iframeUrlRaw;
+											if (!iframeUrl.startsWith("http")) {
+												iframeUrl = serverUrl + iframeUrlRaw;
+											}
+											
+											String iframeHttp = crawler.Game4399Crawler.ungzip(iframeUrl, "gbk");
+											p = java.util.regex.Pattern.compile("<embed [^>]*?src=\"([^\"]*?)\"[^>]*?>");
+											m = p.matcher(iframeHttp.toString());
+											if (m.find()) {
+												type = "swf-iframe";
+												swfUrl = sys.fullUrl(iframeUrl, m.group(1));
+												if (m.find()) {
+													swfUrl = sys.fullUrl(iframeUrl, m.group(1));
+												}
+											}
+											else {
+												// check if unity3d games
+												// better to check it in embed. but since unity 3d games are rare...
+												p = java.util.regex.Pattern.compile("UnityObject\\d*\\.js[\\s\\S]*?var gamename = \"(.*?)\";");
+												m = p.matcher(iframeHttp.toString());
+												if (m.find()) {
+													type = "unity3d-iframe";
+													swfUrl = sys.fullUrl(iframeUrl, m.group(1));
+												} else {
+													p = java.util.regex.Pattern.compile("UnityObject\\d*\\.js[\\s\\S]*?\\.initPlugin[\\s\\S]*\"(.*?\\.unity3d)\"");
+													m = p.matcher(iframeHttp.toString());
+													if (m.find()) {
+														type = "unity3d-iframe";
+														swfUrl = sys.fullUrl(iframeUrl, m.group(1));
+													}
+												}
+											}
+											print("[" + new Date() + "]finish " + type + ": source=" + source + ", category=" + category + ", rank=" + rank + ", name=" + gameName + ", img=" + gameImg + ", intro_url=" + introUrl + ", game_url=" + gameUrl + ", server_url=" + serverUrl + ", iframe_url=" + iframeUrl + ", swf_url=" + swfUrl);
+										}
+										
+										p = java.util.regex.Pattern.compile("<iframe.*width='(\\d+)' height='(\\d+)'");
+										m = p.matcher(jsScript.toString());
+										if (m.find()) {
+											swfWidth = m.group(1);
+											swfHeight = m.group(2);
+										}
+									} else {
+										print("[" + new Date() + "]unknown type: category=" + category + ", rank=" + rank + ", name=" + gameName + ", img=" + gameImg + ", intro_url=" + introUrl + ", game_url=" + gameUrl);
+									}
+								]]></script>
+	
+								<case>
+									<if condition='${swfWidth.toString().equals("0")}'>
+										<script><![CDATA[
+											print("    do not have swf width/height: name=" + gameName + ", game_url=" + gameUrl);
+										]]></script>
+									</if>
+								</case>
+	
+								<var-def name="gameXml">
+								<case>
+									<if condition='${!type.toString().equals("unknown")}'>
+										<case>
+											<if condition='${type.toString().equals("swf")}'>
+												<template><![CDATA[
+													<Game source="${source}" type="${type}" category="${category}" name="${gameName}" img="${gameImg}" intro_url="${sys.escapeXml(introUrl)}" game_url="${sys.escapeXml(gameUrl)}" swf_url="${sys.escapeXml(swfUrl)}" swf_width="${swfWidth}" swf_height="${swfHeight}">
+												]]></template>
+											</if>
+											<if condition='${type.toString().equals("swf-iframe") || type.toString().equals("unity3d-iframe")}'>
+												<template><![CDATA[
+													<Game source="${source}" type="${type}" category="${category}" name="${gameName}" img="${gameImg}" intro_url="${sys.escapeXml(introUrl)}" game_url="${sys.escapeXml(gameUrl)}" iframe_url="${sys.escapeXml(iframeUrl)}" swf_url="${sys.escapeXml(swfUrl)}" swf_width="${swfWidth}" swf_height="${swfHeight}">
+												]]></template>
+											</if>
+										</case>
+										
+										<case>
+											<if condition='${!infoCategory.isEmpty()}'>
+												<template><![CDATA[
+													<Info category="${infoCategory}" size="${infoSize}" date="${infoDate}" topics="${sys.escapeXml(infoTopics)}" intro="${sys.escapeXml(infoIntro)}" />
+												]]></template>
+											</if>
+										</case>
+										
+										<case>
+											<if condition='${!gameKey.isEmpty()}'>
+												<template><![CDATA[<GameKey>]]></template>
+												<template><![CDATA[${gameKey}]]></template>
+												<template><![CDATA[</GameKey>]]></template>
+											</if>
+										</case>
+										
+										<template><![CDATA[</Game>]]></template>
+									</if>
+								</case>
+								</var-def>
+							</if>
+							<else>
+								<script><![CDATA[
+									print("[" + new Date() + "]unknown type: category=" + category + ", rank=" + rank + ", name=" + gameName + ", img=" + gameImg + ", intro_url=" + introUrl + ", game_url=" + gameUrl);
+								]]></script>
+							</else>
+						</case>
+					</empty>
+					<var name="gameXml" />
+				</body>
+				<catch>
+					<empty>
+						<script><![CDATA[
+							print("[" + new Date() + "]exception occur: category=" + category + ", rank=" + rank + ", name=" + gameName + ", img=" + gameImg + ", intro_url=" + introUrl + ", game_url=" + gameUrl);
+						]]></script>
+					</empty>
+				</catch>
+			</try>
+		</return>
+	</function>
+	
+	<!-- params: List gameList -->
+	<function name="crawl-4399-list">
+		<return>
+			<loop item="game">
+				<list><var name="gameList" /></list>
+				<body>
+					<call name="crawl-4399-single">
+						<call-param name="source"><xpath expression="Game/@source"><var name="game" /></xpath></call-param>
+						<call-param name="category"><xpath expression="Game/@category"><var name="game" /></xpath></call-param>
+						<call-param name="gameName"><xpath expression="Game/@name"><var name="game" /></xpath></call-param>
+						<call-param name="gameImg"><xpath expression="Game/@img"><var name="game" /></xpath></call-param>
+						<call-param name="introUrl"><xpath expression="Game/@url"><var name="game" /></xpath></call-param>
+						<call-param name="rank"><xpath expression="Game/@rank"><var name="game" /></xpath></call-param>
+					</call>
+					
+					<empty>
+						<script><![CDATA[
+							Thread.sleep(1000);
+						]]></script>
+					</empty>
+				</body>
+			</loop>
+		</return>
+	</function>
+</config>

@@ -70,13 +70,17 @@
             var floatUrl;
             if($(this)[0].getAttribute("source") == "4399")
             {
-                floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
+                //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
+                floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
+            }
+            else if($(this)[0].getAttribute("source") == "Own"){
+                //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
+                floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow_Own.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
             }
             else{
                 floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow_7k7k.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
             }
-            var data = {r
-                
+            var data = {
                 way: "pop_window",
                 url:floatUrl,
                 //url: "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index") + "&width=" + $(this)[0].getAttribute("media_width") + "&height=" + $(this)[0].getAttribute("media_height"),
@@ -88,9 +92,9 @@
                         height: String(parseInt($(this)[0].getAttribute("media_height")) + bannerHeight),
                         width: $(this)[0].getAttribute("media_width"),
                         source: $(this)[0].getAttribute("source"),
-                        showmax: 0,
+                        showmax: 1,
                         showmin: 1,
-                        showresize: 0,
+                        showresize: 1,
                         showtop: 0,
                         showaudio: 0,
                         backtoapp:1

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- params: String inFile, int force -->
+<!-- force: 1 - 如果游戏名称相同，则替换内容，id不变, 0 - 如果游戏名称相同，则忽略 -->
+<config charset="utf-8">
+	<var-def name="gameList">
+		<xpath expression="/Games/Game">
+			<file action="read" path="${inFile}" charset="utf-8" />
+		</xpath>
+	</var-def>
+
+    <loop item="game">
+		<list><var name="gameList" /></list>
+		<body>
+			<var-def name="source"><xpath expression="Game/@source"><var name="game" /></xpath></var-def>
+			<var-def name="typeRaw"><xpath expression="Game/@type"><var name="game" /></xpath></var-def>
+			<script><![CDATA[
+				String type = typeRaw.toString();
+				if (typeRaw.toString().equals("unity3d-iframe")) {
+					type = "unity3d";
+				} else if (typeRaw.toString().equals("swf-iframe")) {
+					type = "swf";
+				}
+			]]></script>
+			<var-def name="categoryRaw"><xpath expression="Game/Info/@category"><var name="game" /></xpath></var-def>
+			<case>
+				<if condition='${!categoryRaw.isEmpty()}'>
+					<var-def name="category"><template><![CDATA[${categoryRaw.toString().replaceAll("小游戏", "").replaceAll("类", "")}]]></template></var-def>
+				</if>
+				<else>
+					<var-def name="categoryRaw"><xpath expression="Game/@category"><var name="game" /></xpath></var-def>
+					<var-def name="category"><template><![CDATA[${categoryRaw.toString().replaceAll("类", "")}]]></template></var-def>
+				</else>
+			</case>
+			<var-def name="gameName"><xpath expression="Game/@name"><var name="game" /></xpath></var-def>
+			<var-def name="iconUrl"><xpath expression="Game/@img"><var name="game" /></xpath></var-def>
+			<var-def name="introUrl"><xpath expression="Game/@intro_url"><var name="game" /></xpath></var-def>
+			<var-def name="gameUrl"><xpath expression="Game/@game_url"><var name="game" /></xpath></var-def>
+			<var-def name="swfUrlUnescaped"><xpath expression="Game/@swf_url"><var name="game" /></xpath></var-def>
+			<var-def name="swfUrl"><template><![CDATA[${swfUrlUnescaped.toString().replaceAll("'", "\\\\'")}]]></template></var-def>
+			<var-def name="swfWidth"><xpath expression="Game/@swf_width"><var name="game" /></xpath></var-def>
+			<var-def name="swfHeight"><xpath expression="Game/@swf_height"><var name="game" /></xpath></var-def>
+			<var-def name="gameSize"><xpath expression="Game/Info/@size"><var name="game" /></xpath></var-def>
+			<var-def name="uploadDate"><xpath expression="Game/Info/@date"><var name="game" /></xpath></var-def>
+			<var-def name="tags"><xpath expression="Game/Info/@topics"><var name="game" /></xpath></var-def>
+			<var-def name="introUnescaped"><xpath expression="Game/Info/@intro"><var name="game" /></xpath></var-def>
+			<var-def name="intro"><template><![CDATA[${introUnescaped.toString().replaceAll("'", "\\\\'")}]]></template></var-def>
+			<var-def name="gameKeyRaw"><xpath expression="Game/GameKey/*"><var name="game" /></xpath></var-def>
+			<script><![CDATA[
+				String s = gameKeyRaw.toString().replaceAll("<div class=\"clear\"/>", "");
+				java.util.regex.Pattern p = java.util.regex.Pattern.compile("<(\\S+) (.*)/>");;
+				java.util.regex.Matcher m = p.matcher(s);
+				String s1 = m.replaceAll("<$1 $2></$1>");
+				String gameKey = s1.replaceAll("'", "\\\\'"); // mysql escape
+			]]></script>
+
+			<case>
+				<if condition='${!type.toString().equals("unknown")}'>
+					<database connection="jdbc:mysql://10.52.178.36:4406/entertainment?user=entertainment&amp;password=zJIxk46y&lt;&amp;characterEncoding=UTF8" 
+		       			jdbcclass="com.mysql.jdbc.Driver">
+		       			<case>
+		       				<if condition="${force.toInt() == 0}">
+		       					<template><![CDATA[
+				          			insert ignore into Game (source, name, type, category, icon_url, intro_url, game_url, swf_url, swf_width, swf_height, size, upload_date, tags, intro, game_key_html, state, created_at, updated_at)
+				          			values ('${source}', '${gameName}', '${type}', '${category}', '${iconUrl}', '${introUrl}', '${gameUrl}', '${swfUrl}', ${swfWidth}, ${swfHeight}, '${gameSize}', '${uploadDate}', '${tags}', '${intro}', '${gameKey}', 0, now(), now());
+								]]></template>
+		       				</if>
+		       				<else>
+		       					<template><![CDATA[
+				          			insert into Game (source, name, type, category, icon_url, intro_url, game_url, swf_url, swf_width, swf_height, size, upload_date, tags, intro, game_key_html, state, created_at, updated_at)
+				          			values ('${source}', '${gameName}', '${type}', '${category}', '${iconUrl}', '${introUrl}', '${gameUrl}', '${swfUrl}', ${swfWidth}, ${swfHeight}, '${gameSize}', '${uploadDate}', '${tags}', '${intro}', '${gameKey}', 0, now(), now())
+				          			on duplicate key update source='${source}', type='${type}', category='${category}', icon_url='${iconUrl}', intro_url='${introUrl}', game_url='${gameUrl}', swf_url='${swfUrl}', swf_width=${swfWidth}, swf_height=${swfHeight},
+				          			size='${gameSize}', upload_date='${uploadDate}', tags='${tags}', intro='${intro}', game_key_html='${gameKey}', updated_at=now();
+								]]></template>
+		       				</else>
+		       			</case>
+					</database>
+		
+					<script><![CDATA[
+						print("finish " + type + ": source=" + source + ", category=" + category + ", name=" + gameName + ", img=" + iconUrl + ", intro_url=" + introUrl + ", game_url=" + gameUrl + ", swf_url=" + swfUrl);
+					]]></script>
+				</if>
+			</case>
+		</body>
+	</loop>
+	
+</config>
