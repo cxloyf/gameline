@@ -116,10 +116,52 @@
             SetPlayRecord($(this), htmlEl);
 
         });
-
-
+        setTimeout(function(){
+            pandoraAjaxRequest();
+        },1000);
     });
 
+
+
+    function openFloatWindows(floatWindows){
+        var floatUrl;
+        if(floatWindows.source == "4399")
+        {
+            //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
+            floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow.html?id=" + floatWindows.id + "&width="+ floatWindows.width + "&height=" + floatWindows.height;
+        }
+        else if(floatWindows.source == "Own"){
+            //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
+            floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow_Own.html?id=" + floatWindows.id + "&width=" + floatWindows.width + "&height=" + floatWindows.height;
+        }
+        else{
+            floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow_7k7k.html?id=" + floatWindows.id + "&width=" + floatWindows.width + "&height=" + floatWindows.height;
+        }
+        var data = {
+            way: "pop_window",
+            url:floatUrl,
+            source_info: {
+                input_string: JSON.stringify({
+                    type: 1,
+                    title: floatWindows.name,
+                    height: String(parseInt(floatWindows.height) + bannerHeight),
+                    width: String(floatWindows.width),
+                    source: floatWindows.source,
+                    showmax: 1,
+                    showmin: 1,
+                    showresize: 1,
+                    showtop: 0,
+                    showaudio: 0,
+                    backtoapp:1
+                })
+            }
+        };
+
+        bdc.external.appSend('local/net/open_url', data || {}, function () {
+        });
+        var htmlEl = '<a  class=playrecordName onclick="playRecordWindow($(this))" sid="' + floatWindows.id + '" info=' + JSON.stringify(data) + '>' + floatWindows.name + '</a>';
+        SetPlayRecord($(this), htmlEl);
+    }
 
     function replaceBtn() {
         ajax();
