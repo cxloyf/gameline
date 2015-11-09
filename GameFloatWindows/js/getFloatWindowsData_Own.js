@@ -48,12 +48,7 @@ function ajax() {
 function requestFloatData(json) {
     if (json.code == 0) {
         var gameKey = json.result.data.game_key_content + '<ul></ul>';
-        //$("#media")[0].setAttribute('src',"");
-        //$("#media")[0].src = json.result.data.swf_url;
-        //$("#media")[0].width = gameWidth = json.result.data.media_width;
-        //$("#media")[0].height = gameHeight = json.result.data.media_height;
         runSimulatorInHtml(json.result.data.type, json.result.data.swf_url, json.result.data.media_width, json.result.data.media_height);
-        //mediaBody(json.result.data.swf_url, json.result.data.media_width, json.result.data.media_height);
         $("#GameKey").append(gameKey);
         $("#intro_url").html("”Œœ∑¿¥‘¥£∫" + json.result.data.intro_url);
         $("#gameGuidance").attr("name", json.result.data.name);
@@ -62,9 +57,6 @@ function requestFloatData(json) {
             var d = document.getElementById('pullDownBanner');
             var i = document.getElementById('intro_url');
             keyboardHeight = d.offsetHeight;
-            //keyboardHeight = d.offsetHeight+i.offsetHeight;
-            //$("#intro_url").css("top",keyboardHeight+"px");
-            //d.style.display = "none";
         })()
     }
 }
