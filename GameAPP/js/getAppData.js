@@ -1,14 +1,21 @@
     var offset = 0;
     var bannerHeight = 32 + 8;
     var GameRefreshCount=0;
-
+    var extra_game_info=null;
     bdc.app.init({
         appId: 1013
     });
     bdc.app.ready();
 
     function ajax() {
-        var url = "http://172.17.181.135:8264/games?offset=" + offset;
+        var id = getQueryString("id");
+        var url;
+        if(id){
+            url = "http://172.17.181.135:8264/games?offset=" + offset+"&extra_game_id="+id;
+        }
+        else{
+            url = "http://172.17.181.135:8264/games?offset=" + offset;
+        }
         $.ajax({
             url: url,
             async: true,
@@ -65,6 +72,11 @@
             if (offset == json.result.total) {
                 offset = 0;
             }
+
+            if(json.result.extra_game_info)
+            {
+                extra_game_info =json.result.extra_game_info;
+            }
     }
 
 
@@ -82,8 +94,11 @@
             openFloatWindows(floatWindows);
             DataReport.clickGameIcon("1", $(this)[0].getAttribute("index"));
         });
+
         setTimeout(function(){
-            pandoraAjaxRequest();
+            if(extra_game_info){
+                requestPandoraData(extra_game_info);
+            }
         },1000);
     });
 
@@ -93,11 +108,11 @@
         var floatUrl;
         if(floatWindows.source == "4399")
         {
-            //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
+            //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + floatWindows.id +"&width=" + floatWindows.width + "&height="+floatWindows.height;
             floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow.html?id=" + floatWindows.id + "&width="+ floatWindows.width + "&height=" + floatWindows.height;
         }
         else if(floatWindows.source == "Own"){
-            //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
+            //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow_Own.html?id=" + floatWindows.id +"&width=" + floatWindows.width + "&height="+floatWindows.height;
             floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow_Own.html?id=" + floatWindows.id + "&width=" + floatWindows.width + "&height=" + floatWindows.height;
         }
         else{
