@@ -4,6 +4,7 @@ var playRecordStorage = "playRecordStorage";
 var tm_listTopPaddingT = 10;
 var playRecordWidth = 317;
 var PlayRecordLength;
+var topValue=0;
 function SetPlayRecord(x, htmlEl) {
     PlayRecordLength = playRecordWidth;
     showHeader();
