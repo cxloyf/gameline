@@ -73,48 +73,14 @@
         hideHeader();
         GetPlayRecord();
         $("ul").delegate(".gameInfo", 'click', function (event) {
-            var floatUrl;
-            if($(this)[0].getAttribute("source") == "4399")
-            {
-                //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
-                floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
-            }
-            else if($(this)[0].getAttribute("source") == "Own"){
-                //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
-                floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow_Own.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
-            }
-            else{
-                floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow_7k7k.html?id=" + $(this)[0].getAttribute("index")+"&width="+$(this)[0].getAttribute("media_width")+"&height="+$(this)[0].getAttribute("media_height");
-            }
-            var data = {
-                way: "pop_window",
-                url:floatUrl,
-                //url: "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + $(this)[0].getAttribute("index") + "&width=" + $(this)[0].getAttribute("media_width") + "&height=" + $(this)[0].getAttribute("media_height"),
-                //url     :"http://localhost:8080/GameFloatWindows/FloatWindow.html?id=43&width=960&height=600",
-                source_info: {
-                    input_string: JSON.stringify({
-                        type: 1,
-                        title: $(this)[0].getAttribute("name"),
-                        height: String(parseInt($(this)[0].getAttribute("media_height")) + bannerHeight),
-                        width: $(this)[0].getAttribute("media_width"),
-                        source: $(this)[0].getAttribute("source"),
-                        showmax: 1,
-                        showmin: 1,
-                        showresize: 1,
-                        showtop: 0,
-                        showaudio: 0,
-                        backtoapp:1
-                    })
-                }
-            };
-
-            bdc.external.appSend('local/net/open_url', data || {}, function () {
-            });
+            var floatWindows = new Object();
+            floatWindows.name = $(this)[0].getAttribute("name");
+            floatWindows.width = $(this)[0].getAttribute("media_width");
+            floatWindows.height = $(this)[0].getAttribute("media_height");
+            floatWindows.source = $(this)[0].getAttribute("source");
+            floatWindows.id = $(this)[0].getAttribute("index");
+            openFloatWindows(floatWindows);
             DataReport.clickGameIcon("1", $(this)[0].getAttribute("index"));
-            var name = $(this)[0].getAttribute("name");
-            var htmlEl = '<a  class=playrecordName onclick="playRecordWindow($(this))" sid="' + $(this)[0].getAttribute("index") + '" info=' + JSON.stringify(data) + '>' + name + '</a>';
-            SetPlayRecord($(this), htmlEl);
-
         });
         setTimeout(function(){
             pandoraAjaxRequest();

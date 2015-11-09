@@ -37,7 +37,7 @@ function pandoraAjaxRequest(){
 
 function requestPandoraData(json) {
     if (json.code == 0) {
-        var floatWindows = new Object();;
+        var floatWindows = new Object();
         floatWindows.name = json.result.data.name;
         floatWindows.width = json.result.data.media_width;
         floatWindows.height = json.result.data.media_height;
