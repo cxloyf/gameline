@@ -165,7 +165,6 @@ html {
     width: 100%;
     z-index: 100;
     text-align:center;
-    border-bottom:1px solid lightblue;
 }
 
 .gameTitleImg {
@@ -187,6 +186,8 @@ html {
     width: 100%;
     z-index: 10;
     color: #3f505b;
+    border-top: 1px solid lightblue;
+    border-bottom:1px solid lightblue;
     -webkit-user-select: none;
 }
 
@@ -261,7 +262,7 @@ html {
     float: left;
     width: 96px;
     height: 90px;
-
+    color: #3f505b;
     display: inline;
     line-height: 22px;
     text-align: center;
@@ -342,11 +343,13 @@ a:active {
 }
 
  .more_game_text_a{
-    padding-top: 7px;
-     display: block;
+     top: 4px;
+     margin:0 auto;
+     padding:0;
     line-height:12px;
     font-size: 12px;
     position: relative;
+     height: 12px;
     color: #B1B8BD;
 }
 

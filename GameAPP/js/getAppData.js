@@ -11,10 +11,10 @@
         var id = getQueryString("id");
         var url;
         if(id){
-            url = "http://172.17.181.135:8264/games?offset=" + offset+"&extra_game_id="+id;
+            url = "http://172.17.181.135:8264/games?offset=" + offset+"&size=1&extra_game_id="+id;
         }
         else{
-            url = "http://172.17.181.135:8264/games?offset=" + offset;
+            url = "http://172.17.181.135:8264/games?offset=" + offset + "&size=1";
         }
         $.ajax({
             url: url,
@@ -108,8 +108,8 @@
         var floatUrl;
         if(floatWindows.source == "4399")
         {
-            //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + floatWindows.id +"&width=" + floatWindows.width + "&height="+floatWindows.height;
-            floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow.html?id=" + floatWindows.id + "&width="+ floatWindows.width + "&height=" + floatWindows.height;
+            floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + floatWindows.id +"&width=" + floatWindows.width + "&height="+floatWindows.height;
+            //floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow.html?id=" + floatWindows.id + "&width="+ floatWindows.width + "&height=" + floatWindows.height;
         }
         else if(floatWindows.source == "Own"){
             //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow_Own.html?id=" + floatWindows.id +"&width=" + floatWindows.width + "&height="+floatWindows.height;
@@ -128,9 +128,9 @@
                     height: String(parseInt(floatWindows.height) + bannerHeight),
                     width: String(floatWindows.width),
                     source: floatWindows.source,
-                    showmax: 1,
+                    showmax: 0,
                     showmin: 1,
-                    showresize: 1,
+                    showresize: 0,
                     showtop: 0,
                     showaudio: 0,
                     backtoapp:1

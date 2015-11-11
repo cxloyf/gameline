@@ -1,7 +1,8 @@
 var gameList = new LinkedList();
 var playRecordIndex = "0";
 var playRecordStorage = "playRecordStorage";
-var tm_listTopPaddingT = 10;
+var tm_listTopPadding_show = 10;
+var tm_listTopPadding_hide = 15;
 var playRecordWidth = 317;
 var PlayRecordLength;
 var topValue=0;
@@ -125,7 +126,7 @@ function showHeader(){
     $("#clearTip").css('display','none');
     $("#playRecordBar").css('display','block');
     //$("#playRecordBar").slideDown("slow");
-    topValue = $("#playRecordBar").height()+$("#header").height()+tm_listTopPaddingT;
+    topValue = $("#playRecordBar").height()+$("#header").height()+tm_listTopPadding_show;
     $("#game").css('margin-top',topValue);
     $("#playRecordText").innerHTML="我玩过的:";
 }
@@ -145,7 +146,7 @@ function hideHeader(){
     $("#playRecordText").innerHTML="";
     //$("#playRecordBar").slideUp("slow");
     $("#playRecordBar").css('display','none');
-    topValue = $("#header").height()+tm_listTopPaddingT;
+    topValue = $("#header").height()+tm_listTopPadding_hide;
     $("#game").css('margin-top',topValue);
 }
 

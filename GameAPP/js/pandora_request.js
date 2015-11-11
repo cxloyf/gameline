@@ -7,7 +7,6 @@ function requestPandoraData(getJson) {
         floatWindows.name = getJson.name;
         floatWindows.width = getJson.media_width;
         floatWindows.height = getJson.media_height;
-        //var source = getJson.result.data.source;
         floatWindows.source =  getJson.source;
         floatWindows.id = getJson.id;
         openFloatWindows(floatWindows);

@@ -120,10 +120,12 @@ function stateButOut(){
 //////////////////////////////////////////////////////////
 function refreshClick() {
     DataReport.clickRefreshButton();
-    if(type != "unity3d"){
+    if(type == "swf"){
         $("#media")[0].src = $("#media")[0].src;
-    }else{
+    }else if(type == "unity3d"){
         unity3dDetection(MediaUrl);
+    }else if(type == "own"){
+        runSimulatorInHtml(jsonTemp.result.data.type, jsonTemp.result.data.swf_url, jsonTemp.result.data.media_width, jsonTemp.result.data.media_height);
     }
 }
 var voicePngValue=" 0 0";
