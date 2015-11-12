@@ -61,7 +61,7 @@ function stateButClick() {
         $("#stateBut").css("background", 'url("img/pullDown.png") 0 0');
         stateButUp();
         var data = {
-            height: keyboardHeight + gameHeight + bannerHeight + 15,
+            height: document.getElementById('pullDownBanner').offsetHeight + gameHeight + bannerHeight + 15,
             width: gameWidth
         };
         bdc.external.appSend('local/ui/set_window_size', data || {}, function () {

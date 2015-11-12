@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1d94d40-eeed-4a58-b685-00d607b6f8a2" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\download\ha_USBWebserver\root\GameFloatWindows\external\localization\EN-US.0fdeeab4c3790921b0b89a69d32a80c1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\download\ha_USBWebserver\root\GameFloatWindows\external\localization\EN-US.3fdf0ebdccf65d1fcdae3c8db15f32cb.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\download\ha_USBWebserver\root\GameFloatWindows\external\localization\EN-US.67b0da51f95bea061f620dd97af75852.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\download\ha_USBWebserver\root\GameFloatWindows\external\localization\EN-US.83a36dfd5257c8bb82e51d14503a6737.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\download\ha_USBWebserver\root\GameFloatWindows\external\localization\EN-US.e3b78a5c487a5da4adc0ef9a9ca8f15e.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\download\ha_USBWebserver\root\GameFloatWindows\external\localization\EN-US.images.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\download\ha_USBWebserver\root\GameFloatWindows\external\localization\EN-US.text.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\download\ha_USBWebserver\root\GameFloatWindows\external\localization\index.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\download\ha_USBWebserver\root\root-游戏图片居中.rar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/external/nesbox/flash/Nesbox.swf" afterPath="$PROJECT_DIR$/external/nesbox/flash/Nesbox.swf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameFloatWindows/img/pullDown.png" afterPath="$PROJECT_DIR$/GameFloatWindows/img/pullDown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameFloatWindows/img/scrollUp.png" afterPath="$PROJECT_DIR$/GameFloatWindows/img/scrollUp.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameFloatWindows/FloatWindow.html" afterPath="$PROJECT_DIR$/GameFloatWindows/FloatWindow.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameFloatWindows/FloatWindow_7k7k.html" afterPath="$PROJECT_DIR$/GameFloatWindows/FloatWindow_7k7k.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameFloatWindows/FloatWindow_Own.html" afterPath="$PROJECT_DIR$/GameFloatWindows/FloatWindow_Own.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameFloatWindows/js/buttonBanner.js" afterPath="$PROJECT_DIR$/GameFloatWindows/js/buttonBanner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameFloatWindows/js/emulator.js" afterPath="$PROJECT_DIR$/GameFloatWindows/js/emulator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameAPP/css/gameApp.css" afterPath="$PROJECT_DIR$/GameAPP/css/gameApp.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameAPP/js/getAppData.js" afterPath="$PROJECT_DIR$/GameAPP/js/getAppData.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData_Own.js" afterPath="$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData_Own.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameAPP/js/pandora_request.js" afterPath="$PROJECT_DIR$/GameAPP/js/pandora_request.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameAPP/js/storePlayRecord.js" afterPath="$PROJECT_DIR$/GameAPP/js/storePlayRecord.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="root.iws" />
@@ -45,10 +24,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="FloatWindow_Own.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GameFloatWindows/FloatWindow_Own.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.70354456">
+              <caret line="35" column="34" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="34" />
+              <folding>
+                <element signature="n#style#0;n#object#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="GameApp.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GameAPP/GameApp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-25.785715">
               <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
               <folding />
             </state>
@@ -58,9 +50,21 @@
       <file leaf-file-name="buttonBanner.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GameFloatWindows/js/buttonBanner.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state vertical-scroll-proportion="-28.666666">
+              <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getFloatWindowsData.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+              <folding>
+                <element signature="n#!!block;n#setMediaLayout#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,8 +72,8 @@
       <file leaf-file-name="getAppData.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GameAPP/js/getAppData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="114" column="14" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="14" />
+            <state vertical-scroll-proportion="-22.5">
+              <caret line="142" column="91" selection-start-line="142" selection-start-column="91" selection-end-line="142" selection-end-column="91" />
               <folding>
                 <element signature="n#!!block;n#replaceBtn#0" expanded="false" />
               </folding>
@@ -77,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getFloatWindowsData_Own.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getFloatWindowsData_Own.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData_Own.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09390445">
-              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+            <state vertical-scroll-proportion="-15.833333">
+              <caret line="49" column="68" selection-start-line="49" selection-start-column="68" selection-end-line="49" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -156,19 +160,19 @@
         <option value="D:/WorkSpace/html/badgame.html" />
         <option value="$PROJECT_DIR$/GameFloatWindows/css/shrink.css" />
         <option value="$USER_HOME$/Documents/小游戏标题_files/u4js.js" />
-        <option value="$PROJECT_DIR$/GameFloatWindows/js/buttonBanner.js" />
         <option value="$PROJECT_DIR$/GameFloatWindows/js/runSimulatorInHtml.js" />
         <option value="$PROJECT_DIR$/GameFloatWindows/js/emulator.js" />
         <option value="$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData.js" />
         <option value="$PROJECT_DIR$/GameAPP/js/pandora_request.js" />
         <option value="$PROJECT_DIR$/GameFloatWindows/FloatWindow_7k7k.html" />
-        <option value="$PROJECT_DIR$/GameFloatWindows/FloatWindow_Own.html" />
         <option value="$PROJECT_DIR$/GameFloatWindows/FloatWindow.html" />
         <option value="$PROJECT_DIR$/GameAPP/GameApp.html" />
         <option value="$PROJECT_DIR$/GameAPP/css/gameApp.css" />
         <option value="$PROJECT_DIR$/GameAPP/js/storePlayRecord.js" />
         <option value="$PROJECT_DIR$/GameAPP/js/getAppData.js" />
         <option value="$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData_Own.js" />
+        <option value="$PROJECT_DIR$/GameFloatWindows/js/buttonBanner.js" />
+        <option value="$PROJECT_DIR$/GameFloatWindows/FloatWindow_Own.html" />
       </list>
     </option>
   </component>
@@ -180,10 +184,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-1928" />
+    <option name="y" value="-166" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -358,27 +362,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-1928" y="-166" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18081991" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12864584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -692,32 +696,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43154246">
-          <caret line="49" column="78" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="78" />
-          <folding>
-            <element signature="n#!!block;n#setMediaLayout#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GameAPP/js/pandora_request.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
           <folding>
             <element signature="n#!!doc;n#requestPandoraData#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GameFloatWindows/FloatWindow_Own.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5734024">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#object#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -737,24 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GameAPP/GameApp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GameAPP/js/getAppData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="14" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!block;n#replaceBtn#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GameAPP/css/gameApp.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -771,19 +737,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GameFloatWindows/js/buttonBanner.js">
+    <entry file="file://$PROJECT_DIR$/GameAPP/GameApp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.785715">
+          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!block;n#setMediaLayout#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameAPP/js/getAppData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.5">
+          <caret line="142" column="91" selection-start-line="142" selection-start-column="91" selection-end-line="142" selection-end-column="91" />
+          <folding>
+            <element signature="n#!!block;n#replaceBtn#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GameFloatWindows/js/getFloatWindowsData_Own.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09390445">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        <state vertical-scroll-proportion="-15.833333">
+          <caret line="49" column="68" selection-start-line="49" selection-start-column="68" selection-end-line="49" selection-end-column="68" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameFloatWindows/js/buttonBanner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.666666">
+          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameFloatWindows/FloatWindow_Own.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70354456">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#object#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
