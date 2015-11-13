@@ -6,9 +6,16 @@
         appId: 1013
     });
     bdc.app.ready();
+    ajax();
+    function ajax(flag) {
+        var id;
+        if(flag) {
+            id =flag;
+        }
+        else{
+            id = getQueryString("id");
+        }
 
-    function ajax() {
-        var id = getQueryString("id");
         var url;
         if(id){
             url = "http://172.17.181.135:8264/games?offset=" + offset+"&size=1&extra_game_id="+id;
@@ -23,7 +30,7 @@
             data: null,
             timeout:3000,
             success: function (msg) {
-                requestAppData(msg);
+                requestAppData(msg, flag);
             },
 
             error: function (XMLHttpRequest,textStatus,errorThrown) {
@@ -43,8 +50,8 @@
         });
     }
 
-        function requestAppData(json) {
-            if (json.code == 0 && json.result.data.length) {
+        function requestAppData(json, flag) {
+            if (json.code == 0 && json.result.data.length && !flag) {
                 $('ul.tm_list').html("");
                 for (var i = 0; i < json.result.data[0].length; i++) {
                     var index = json.result.data[0][i].id;
@@ -81,7 +88,7 @@
 
 
     $(document).ready(function () {
-        ajax();
+
         hideHeader();
         GetPlayRecord();
         $("ul").delegate(".gameInfo", 'click', function (event) {
@@ -190,3 +197,14 @@
         })
 
     }
+
+
+    bdc.external.appSend('local/cross/set_msg_listener', {
+        "operation": "add"
+    }, function (result) {
+        if(result.error ==0)
+            if(result.body.from_call_id && !isNaN(result.body.message) ){
+                ajax(parseInt(result.body.message));
+            }
+
+    });
