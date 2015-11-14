@@ -1,4 +1,5 @@
-    var offset = 0;
+    var offsetPage = 0;
+    var totalPage = 0;
     var bannerHeight = 32 + 8;
     var GameRefreshCount=0;
     var extra_game_info=null;
@@ -6,8 +7,8 @@
         appId: 1013
     });
     bdc.app.ready();
-    ajax();
-    function ajax(flag) {
+    ajax(offsetPage);
+    function ajax(offs, flag) {
         var id;
         if(flag) {
             id =flag;
@@ -18,10 +19,10 @@
 
         var url;
         if(id){
-            url = "http://172.17.181.135:8264/games?offset=" + offset+"&size=1&extra_game_id="+id;
+            url = "http://172.17.181.135:8264/games?offset=" + offs+"&size=1&extra_game_id="+id;
         }
         else{
-            url = "http://172.17.181.135:8264/games?offset=" + offset + "&size=1";
+            url = "http://172.17.181.135:8264/games?offset=" + offs + "&size=1";
         }
         $.ajax({
             url: url,
@@ -75,10 +76,7 @@
                 }, function (result){})
             }
             //--
-            offset++;
-            if (offset == json.result.total) {
-                offset = 0;
-            }
+            totalPage = json.result.total;
 
             if(json.result.extra_game_info)
             {
@@ -151,14 +149,18 @@
         SetPlayRecord($(this), htmlEl);
     }
 
-    function replaceBtn() {
-        ajax();
+    function replaceBtn(index) {
+        offsetPage = offsetPage +index;
+        if (offsetPage == totalPage) {
+            offsetPage = 0;
+        }
+        ajax(offsetPage);
         DataReport.clickReplaceBtn();
     }
 
     function imgErrorLoad(x) {
         x.setAttribute("src", "img/baiduIcon.png");
-    }
+    }dda
 
     function handleRequestErrorMessage(){
         bdc.external.appSend('local/storage/disk/get',{key: "GameRefreshCount"}, function (result) {
