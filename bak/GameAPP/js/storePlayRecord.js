@@ -1,9 +1,13 @@
 var gameList = new LinkedList();
 var playRecordIndex = "0";
 var playRecordStorage = "playRecordStorage";
-var tm_listTopPaddingT = 10;
-
+var tm_listTopPadding_show = 10;
+var tm_listTopPadding_hide = 15;
+var playRecordWidth = 317;
+var PlayRecordLength;
+var topValue=0;
 function SetPlayRecord(x, htmlEl) {
+    PlayRecordLength = playRecordWidth;
     showHeader();
     for (var i = 0; i < gameList.length; i++) {
         if (htmlEl != gameList.get(i)) {
@@ -27,6 +31,12 @@ function SetPlayRecord(x, htmlEl) {
     $('div.playrecord').html("");
     for (var i = 0; i < gameList.length; i++) {
         $("#playrecord").append(gameList.get(i));
+        PlayRecordLength = PlayRecordLength - $(".playrecordName")[i].offsetWidth-20;
+        if(PlayRecordLength<0)
+        {
+            $(".playrecordName")[i].style.display="none";
+            break;
+        }
     }
 
     bdc.external.appSend('local/storage/disk/set', {
@@ -43,25 +53,27 @@ function SetPlayRecord(x, htmlEl) {
 }
 
 function GetPlayRecord() {
-    hideHeader();
+    PlayRecordLength = playRecordWidth;
     bdc.external.appSend('local/storage/disk/get', {key: playRecordStorage}, function (result) {
         var bError = result.error === 0;
         var bFound = result.body.found === true;
         $('div.playrecord').html("");
         if (bError && bFound) {
             temp = stringToList(result.body.value);
-            for (var i = 0; i < gameList.length; i++) {
-                $("#playrecord").append(gameList.get(i));
-            }
-            if(gameList.length==0){
-                hideHeader();
-            }
-            else{
+            if(gameList.length!=0){
                 showHeader();
             }
-        }
-        else{
-            hideHeader();
+            for (var i = 0; i < gameList.length; i++) {
+                $("#playrecord").append(gameList.get(i));
+                PlayRecordLength = PlayRecordLength - $(".playrecordName")[i].offsetWidth-20;
+                if(PlayRecordLength<0)
+                {
+                    $(".playrecordName")[i].style.display="none";
+                    break;
+                }
+
+            }
+
         }
     })
 }
@@ -81,15 +93,18 @@ function clearDiskRecord() {
             //alert(playRecordIndex);
         }
     })
+    DataReport.clickClearRecord();
 }
 
 function playRecordWindow(x) {
     temp = $(x)[0].getAttribute("info");
+    sid = $(x)[0].getAttribute("sid");
     data = JSON.parse(temp);
     bdc.external.appSend('local/net/open_url', data || {}, function () {
     });
-    var htmlEl = '<a  class=playrecordName onclick="playRecordWindow($(this))" info=' + JSON.stringify(data) + '>' + $(x)[0].innerHTML + '</a>'
+    var htmlEl = '<a  class=playrecordName onclick="playRecordWindow($(this))" sid="' + $(x)[0].getAttribute("sid")+ '" info=' + JSON.stringify(data) + '>' + $(x)[0].innerHTML + '</a>'
     SetPlayRecord(x, htmlEl);
+    DataReport.clickGameIcon("2",$(x)[0].getAttribute("sid"));
 }
 
 function stringToList(x) {
@@ -110,9 +125,10 @@ function showHeader(){
     $("#nobr").css('display','block');
     $("#clearTip").css('display','none');
     $("#playRecordBar").css('display','block');
-    topValue = $("#playRecordBar").height()+$("#header").height()+tm_listTopPaddingT;
+    //$("#playRecordBar").slideDown("slow");
+    topValue = $("#playRecordBar").height()+$("#header").height()+tm_listTopPadding_show;
     $("#game").css('margin-top',topValue);
-    $("#playRecordText").innerHTML="Œ“ÕÊπ˝µƒ:";
+    $("#playRecordText").innerHTML="ÊàëÁé©ËøáÁöÑ:";
 }
 
 function animation(){
@@ -122,13 +138,32 @@ function animation(){
 
     setTimeout(function(){
         hideHeader();
+        GetPlayRecord();
     },1500)
-
 }
 
 function hideHeader(){
     $("#playRecordText").innerHTML="";
+    //$("#playRecordBar").slideUp("slow");
     $("#playRecordBar").css('display','none');
-    topValue = $("#header").height()+tm_listTopPaddingT;
+    topValue = $("#header").height()+tm_listTopPadding_hide;
     $("#game").css('margin-top',topValue);
+}
+
+
+function getQueryString(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return unescape(r[2]);
+    }
+    return null;
+}
+
+
+function moreGame(){
+    var tn = getQueryString("tn");
+    var url = "https://www.baidu.com/s?wd=Â∞èÊ∏∏Êàè&tn="+tn;
+    $("#more_game_text_a").attr("href",url);
+    DataReport.clickMoreGameLink( $("#more_game_text_a").text(), url);
 }

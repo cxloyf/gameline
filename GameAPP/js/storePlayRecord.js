@@ -161,9 +161,9 @@ function getQueryString(name) {
 }
 
 
-function moreGame(){
+function moreGame(x){
     var tn = getQueryString("tn");
     var url = "https://www.baidu.com/s?wd=小游戏&tn="+tn;
-    $("#more_game_text_a").attr("href",url);
+    x.setAttribute("href",url);
     DataReport.clickMoreGameLink( $("#more_game_text_a").text(), url);
 }

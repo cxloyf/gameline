@@ -113,15 +113,15 @@
         var floatUrl;
         if(floatWindows.source == "4399")
         {
-            floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow.html?id=" + floatWindows.id +"&width=" + floatWindows.width + "&height="+floatWindows.height;
+            floatUrl = "http://172.17.181.135:8164/gamepage/GameFloatWindows/FloatWindow.html?id=" + floatWindows.id +"&width=" + floatWindows.width + "&height="+floatWindows.height;
             //floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow.html?id=" + floatWindows.id + "&width="+ floatWindows.width + "&height=" + floatWindows.height;
         }
         else if(floatWindows.source == "Own"){
-            //floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow_Own.html?id=" + floatWindows.id +"&width=" + floatWindows.width + "&height="+floatWindows.height;
-            floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow_Own.html?id=" + floatWindows.id + "&width=" + floatWindows.width + "&height=" + floatWindows.height;
+            floatUrl = "http://172.17.181.135:8164/gamepage/GameFloatWindows/FloatWindow_Own.html?id=" + floatWindows.id +"&width=" + floatWindows.width + "&height="+floatWindows.height;
+            //floatUrl = "http://localhost:8080/GameFloatWindows/FloatWindow_Own.html?id=" + floatWindows.id + "&width=" + floatWindows.width + "&height=" + floatWindows.height;
         }
         else{
-            floatUrl = "http://172.17.181.135:8164/cxl/GameFloatWindows/FloatWindow_7k7k.html?id=" + floatWindows.id + "&width=" + floatWindows.width + "&height=" + floatWindows.height;
+            floatUrl = "http://172.17.181.135:8164/gamepage/GameFloatWindows/FloatWindow_7k7k.html?id=" + floatWindows.id + "&width=" + floatWindows.width + "&height=" + floatWindows.height;
         }
         var data = {
             way: "pop_window",
@@ -153,6 +153,9 @@
         offsetPage = offsetPage +index;
         if (offsetPage == totalPage) {
             offsetPage = 0;
+        }else if(offsetPage == -1)
+        {
+            offsetPage = totalPage-1;
         }
         ajax(offsetPage);
         DataReport.clickReplaceBtn();
@@ -160,7 +163,7 @@
 
     function imgErrorLoad(x) {
         x.setAttribute("src", "img/baiduIcon.png");
-    }dda
+    }
 
     function handleRequestErrorMessage(){
         bdc.external.appSend('local/storage/disk/get',{key: "GameRefreshCount"}, function (result) {

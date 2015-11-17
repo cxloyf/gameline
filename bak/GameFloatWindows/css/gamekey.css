@@ -25,6 +25,7 @@
 .GameKey .player2{height:23px;width:66px;background-position:0px -728px;font-size:0px;line-height:23px;margin-top:3px;margin-left:0px;}
 .GameKey .GameKeyDivide{color:red;height:1px;}
 .GameKey .GameKeySpliter{color:green;height:1px;}
-.GameKey ul{clear:both;float:left;zoom:1;margin-left: 12px}
-.GameKey ul li{float:left;height:32px;text-align:left;line-height:24px;white-space:nowrap;font-size:12px;padding-right:5px;list-style-type:none;}
+.GameKey ul{clear:both;float:left;zoom:1;margin-left: 12px;}
+.GameKey ul li{float:left;height:32px;line-height:32px;text-align:left;font-size:12px;padding-right:5px;list-style-type:none;vertical-align: middle;}
 .GameKey ul li span{float:left;padding:0 3px 0 0px;}
+ul>li>strong>font{line-height:16px;height:16px;display: inline-block; }

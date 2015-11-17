@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Game</title>
+    <link type="text/css" rel="stylesheet" href="css/gameApp.css"/>
     <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="js/jssdk-v2.js"></script>
     <script type="text/javascript" src="js/LinkedList.js"></script>
     <script type="text/javascript" src="js/storePlayRecord.js"></script>
     <script type="text/javascript" src="js/getAppData.js"></script>
-
-    <link type="text/css" rel="stylesheet" href="css/gameApp.css"/>
+    <script type="text/javascript" src="js/dataReport.js"></script>
+    <script type="text/javascript" src="js/pandora_request.js"></script>
 </head>
 
 <body>
 <div class="header" id="header">
-    <nav class="site-logo" id="site-logo">
-       <img src="img/gameTitle.png" alt="小游戏"  class="gameTitleImg" id="gameTitleImg">
-    </nav>
+        <img src="img/gameTitle.png" alt="小游戏" class="gameTitleImg" id="gameTitleImg">
 </div>
 
 <div class="playRecordBar" id="playRecordBar">
@@ -36,17 +35,9 @@
     </ul>
 </div>
 <div class="box">
-    <span id="replace_btn" class="replace_btn" onclick="ajax()"></span>
-    <a class="more_game_text_a"
-                                                        href="https://www.baidu.com/s?wd=%E5%B0%8F%E6%B8%B8%E6%88%8F&ie=utf-8&tn=11000002_ie_dg"
-                                                        target="_blank">更多小游戏请猛戳这里</a>
+    <span id="replace_btn" class="replace_btn" onclick="replaceBtn()"></span>
+    <a class="more_game_text_a" id="more_game_text_a"
+       target="_blank" onclick="moreGame()">更多小游戏请猛戳这里</a>
 </div>
-<script>
-    bdc.app.init({
-        appId: 4019
-    });
-    bdc.app.ready();
-
-</script>
 </body>
 </html>

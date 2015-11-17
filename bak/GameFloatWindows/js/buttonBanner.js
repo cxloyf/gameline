@@ -52,18 +52,26 @@ function stateButClick() {
         bdc.external.appSend('local/ui/set_window_size', data || {}, function () {
         });
 
+        if(type == "unity3d"){
+            $("#mediaLayout").children("embed").css("background","red");
+        }
+        DataReport.clickOperationButton("2");
     } else {
         $("#stateBut").attr("switch","0") ;
         $("#stateBut").css("background", 'url("img/pullDown.png") 0 0');
         stateButUp();
         var data = {
-            height: keyboardHeight + gameHeight + bannerHeight + 15,
+            height: document.getElementById('pullDownBanner').offsetHeight + gameHeight + bannerHeight + 15,
             width: gameWidth
         };
         bdc.external.appSend('local/ui/set_window_size', data || {}, function () {
         });
-
+        if(type == "unity3d"){
+            $("#mediaLayout").children("embed").css("background","yellow");
+        }
+        DataReport.clickOperationButton("1");
     }
+
 }
 
 
@@ -111,9 +119,16 @@ function stateButOut(){
 }
 //////////////////////////////////////////////////////////
 function refreshClick() {
-    $("#media")[0].src = $("#media")[0].src;
+    DataReport.clickRefreshButton();
+    if(type == "swf"){
+        $("#media")[0].src = $("#media")[0].src;
+    }else if(type == "unity3d"){
+        unity3dDetection(MediaUrl);
+    }else if(type == "own"){
+        runSimulatorInHtml(jsonTemp.result.data.type, jsonTemp.result.data.swf_url, jsonTemp.result.data.media_width, jsonTemp.result.data.media_height);
+    }
 }
-
+var voicePngValue=" 0 0";
 function voiceClick() {
     if ($("#voice").attr("value") == "turnOn") {
         $("#voice").attr("value", "turnOff");
@@ -121,6 +136,7 @@ function voiceClick() {
         voiceOnMouseUp();
         bdc.external.appSend('local/basic/set_mute', {mute: 1}, function () {
         });
+        DataReport.clickVoiceButton("1");
     }
     else {
         $("#voice").attr("value", "turnOn");
@@ -128,11 +144,13 @@ function voiceClick() {
         voiceOnMouseUp();
         bdc.external.appSend('local/basic/set_mute', {mute: 0}, function () {
         });
+        DataReport.clickVoiceButton("2");
     }
 
 }
 
 function voiceMouseHover(){
+    voicePngValue = " -22px 0";
     if ($("#voice").attr("value") == "turnOn") {
         $("#voice").css("background", 'url("img/turnOn.png") -22px 0');
     }
@@ -142,6 +160,7 @@ function voiceMouseHover(){
 }
 
 function voiceOnMouseDown() {
+    voicePngValue = " -44px 0";
     if ($("#voice").attr("value") == "turnOn") {
         $("#voice").css("background", 'url("img/turnOn.png") -44px 0');
     }
@@ -151,6 +170,7 @@ function voiceOnMouseDown() {
 }
 
 function voiceOnMouseUp() {
+    voicePngValue = " -22px 0";
     if ($("#voice").attr("value") == "turnOn") {
         $("#voice").css("background", 'url("img/turnOn.png") -22px 0');
     }
@@ -160,6 +180,7 @@ function voiceOnMouseUp() {
 }
 
 function voiceOnMouseOut() {
+    voicePngValue = " 0 0";
     if ($("#voice").attr("value") == "turnOn") {
         $("#voice").css("background", 'url("img/turnOn.png") 0 0');
     }
@@ -169,25 +190,39 @@ function voiceOnMouseOut() {
 }
 
 
-
-
-
+//var GUID;
 $(document).ready(function () {
     $("#voice").attr("value", "turnOn");
+    voiceIsMute();
     setInterval(function (){
-        bdc.external.appSend('local/basic/is_mute', {}, function (result) {
-            if (result.error == 0) {
-                if (result.body.mute == "1") {
-                    $("#voice").attr("value", "turnOff");
-                    $("#voice").css("background", 'url("img/turnOff.png")');
-                }
-                else if (result.body.mute == "0") {
-                    $("#voice").attr("value", "turnOn");
-                    $("#voice").css("background", 'url("img/turnOn.png")');
-                }
-            }
-        });
+       voiceIsMute();
         },1000)
 
-
 })
+
+
+function voiceIsMute(){
+    bdc.external.appSend('local/basic/is_mute', {}, function (result) {
+        if (result.error == 0) {
+            if (result.body.mute == "1") {
+                var path =  'url("img/turnOff.png")' + voicePngValue;
+                $("#voice").attr("value", "turnOff");
+                $("#voice").css("background", path);
+            }
+            else if (result.body.mute == "0") {
+                var path =  'url("img/turnOn.png")' + voicePngValue;
+                $("#voice").attr("value", "turnOn");
+                $("#voice").css("background",path);
+            }
+        }
+    });
+}
+/////////////////////////////////////////////////////
+function clickGameGuidance(){
+    var tn = getQueryString("tn");
+    var url = "https://www.baidu.com/s?wd="+$("#gameGuidance").attr("name")+"¹¥ÂÔ&tn="+tn;
+    $("#gameGuidance").attr("href",url);
+    DataReport.clickGameGuidanceLink();
+}
+
+document.onmousewheel = function() {return false;}
