@@ -53,7 +53,7 @@
 
         function requestAppData(json, flag) {
             if (json.code == 0 && json.result.data.length && !flag) {
-                $('ul.tm_list').html("");
+                $('#tm_list').empty();
                 for (var i = 0; i < json.result.data[0].length; i++) {
                     var index = json.result.data[0][i].id;
                     var name = json.result.data[0][i].name;
