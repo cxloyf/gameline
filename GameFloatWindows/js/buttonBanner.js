@@ -190,7 +190,6 @@ function voiceOnMouseOut() {
 }
 
 
-//var GUID;
 $(document).ready(function () {
     $("#voice").attr("value", "turnOn");
     voiceIsMute();
@@ -217,7 +216,7 @@ function voiceIsMute(){
         }
     });
 }
-/////////////////////////////////////////////////////
+
 function clickGameGuidance(){
     var tn = getQueryString("tn");
     var url = "https://www.baidu.com/s?wd="+$("#gameGuidance").attr("name")+"¹¥ÂÔ&tn="+tn;
