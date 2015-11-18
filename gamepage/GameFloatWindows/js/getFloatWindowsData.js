@@ -45,7 +45,7 @@ function ajax() {
 }
 function requestFloatData(json) {
     if (json.code == 0) {
-        type = json.result.data.type;
+        gameSearchWordType = json.result.data.type;
         var gameKey = json.result.data.game_key_content + '<ul></ul>';
         mediaBody(type, json.result.data.swf_url, json.result.data.media_width, json.result.data.media_height);
         $("#GameKey").append(gameKey);

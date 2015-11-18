@@ -1,3 +1,5 @@
+var gameSearchWordType="";
+
 function getId(element) {
     return element = document.getElementById(element);
 }
@@ -219,7 +221,7 @@ function voiceIsMute(){
 
 function clickGameGuidance(){
     var tn = getQueryString("tn");
-    var url = "https://www.baidu.com/s?wd="+$("#gameGuidance").attr("name")+"好待&tn="+tn;
+    var url = "https://www.baidu.com/s?wd="+gameSearchWordType+$("#gameGuidance").attr("name")+"好待&tn="+tn;
     $("#gameGuidance").attr("href",url);
     DataReport.clickGameGuidanceLink();
 }

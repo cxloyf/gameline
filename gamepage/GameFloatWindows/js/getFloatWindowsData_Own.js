@@ -47,12 +47,13 @@ function ajax() {
 }
 function requestFloatData(json) {
     if (json.code == 0) {
+        gameSearchWordType = gameSearchType(json.result.data.type);
         runSimulatorInHtml(json.result.data.type, json.result.data.swf_url, json.result.data.name, json.result.data.media_width, json.result.data.media_height);
         jsonTemp = json;
         type = "own";
         var gameKey='<ul> <li> <strong> <font color="#ff0000">模拟器小游戏支持“游戏按键设置”“保存游戏”“读取游戏”三大特色功能，请在游戏画面底部浮层中设置。</font> </strong> </li> </ul>';
         $("#GameKey").append(gameKey);
-        $("#intro_url").html("游戏来源：" + json.result.data.intro_url);
+        //$("#intro_url").html("游戏来源：" + json.result.data.intro_url);
         $("#gameGuidance").attr("name", json.result.data.name);
 
         (function () {
@@ -73,4 +74,16 @@ function setMediaLayout(width, height) {
 
 function runSimulatorInHtml(rom_type, rom_url, rom_name, rom_width, rom_height) {
     embed_rom(rom_type, rom_url, rom_name, rom_width, rom_height)
+}
+
+function gameSearchType(searchType){
+    if(searchType == "nes"){
+        return "FC";
+    }else if(searchType == "smc"){
+        return "SFC";
+    }else if(searchType == "gen"){
+        return "世嘉机 ";
+    }else if(searchType == "gb" || searchType == "gbc" || searchType == "gba"){
+        return "";
+    }
 }
