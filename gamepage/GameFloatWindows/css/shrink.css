@@ -1,6 +1,7 @@
 		* {
             margin: 0;
             padding: 0;
+			font-size: 12px;
         }
 		/* 默认不显示下划线，保持页面简洁 */
 		ins, a {
@@ -117,6 +118,13 @@
 			display: block;
 			background: #FFFFFF;
 		}
+		.gameTip{
+			right : 12px;
+			margin-left: 12px;
+			color: #3F505B;
+			padding-top: 4px;
+			padding-bottom: 7px;
+		}
 		.contactMethod{
 			line-height: 12px;
 			padding-top: 10px;
@@ -127,14 +135,12 @@
 			top:0;
             position: relative;
 			float:right;
-			font-size:12px;
 			right : 12px;
         }
 		.QQGroup {
 			top:0;
 			position: relative;
 			float:left;
-			font-size:12px;
 			margin-left: 12px;
 		}
 		.mediaLayout{
