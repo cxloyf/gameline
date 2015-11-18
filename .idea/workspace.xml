@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1d94d40-eeed-4a58-b685-00d607b6f8a2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow.html" afterPath="$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow_7k7k.html" afterPath="$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow_7k7k.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow_Own.html" afterPath="$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow_Own.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gamepage/GameFloatWindows/js/getFloatWindowsData_Own.js" afterPath="$PROJECT_DIR$/gamepage/GameFloatWindows/js/getFloatWindowsData_Own.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gamepage/GameFloatWindows/js/emulator.js" afterPath="$PROJECT_DIR$/gamepage/GameFloatWindows/js/emulator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gamepage/GameAPP/css/gameApp.css" afterPath="$PROJECT_DIR$/gamepage/GameAPP/css/gameApp.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gamepage/GameFloatWindows/css/shrink.css" afterPath="$PROJECT_DIR$/gamepage/GameFloatWindows/css/shrink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="root.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +42,8 @@
       <file leaf-file-name="shrink.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/css/shrink.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23861566">
-              <caret line="137" column="25" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.65391624">
+              <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,8 +52,18 @@
       <file leaf-file-name="FloatWindow_Own.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow_Own.html">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.428571">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloatWindow_7k7k.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow_7k7k.html">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-12.892858">
-              <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
+              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -65,22 +79,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getFloatWindowsData.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/getFloatWindowsData.js">
+      <file leaf-file-name="getFloatWindowsData_Own.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/getFloatWindowsData_Own.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.4">
-              <caret line="47" column="26" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getFloatWindowsData_Own.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/getFloatWindowsData_Own.js">
+      <file leaf-file-name="emulator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/emulator.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloatWindow.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.892858">
+              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="runSimulatorInHtml.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/runSimulatorInHtml.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="swfobject.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/swfobject.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,6 +186,10 @@
         <option value="$PROJECT_DIR$/gamepage/GameFloatWindows/js/getFloatWindowsData.js" />
         <option value="$PROJECT_DIR$/gamepage/GameFloatWindows/js/buttonBanner.js" />
         <option value="$PROJECT_DIR$/gamepage/GameFloatWindows/js/getFloatWindowsData_Own.js" />
+        <option value="$PROJECT_DIR$/gamepage/GameFloatWindows/js/emulator.js" />
+        <option value="$PROJECT_DIR$/gamepage/GameAPP/css/gameApp.css" />
+        <option value="$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow_7k7k.html" />
+        <option value="$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow.html" />
         <option value="$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow_Own.html" />
         <option value="$PROJECT_DIR$/gamepage/GameFloatWindows/css/shrink.css" />
       </list>
@@ -312,6 +362,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gamepage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameAPP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -488,22 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/buttonBanner.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.033333">
-          <caret line="228" column="50" selection-start-line="228" selection-start-column="50" selection-end-line="228" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/getFloatWindowsData_Own.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gamepage/GameAPP/js/getAppData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -512,18 +568,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow_Own.html">
+    <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/swfobject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/runSimulatorInHtml.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/emulator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/getFloatWindowsData_Own.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/js/buttonBanner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.033333">
+          <caret line="228" column="50" selection-start-line="228" selection-start-column="50" selection-end-line="228" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gamepage/GameAPP/css/gameApp.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29982668">
+          <caret line="191" column="1" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow_7k7k.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.892858">
-          <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.892858">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/FloatWindow_Own.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.428571">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gamepage/GameFloatWindows/css/shrink.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23861566">
-          <caret line="137" column="25" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.65391624">
+          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -24,7 +24,11 @@
             position: relative;
 			padding-bottom: 8px;
 			overflow:hidden;
-        }
+		}
+		.opacityLine{
+			border-top: 1px solid #C8E3FA;
+			opacity: 0.15;
+		}
 		.refresh {
 			border: 0;
 			padding: 0;
@@ -110,7 +114,7 @@
 			display: block;
 			background: #FFFFFF;
 			overflow:hidden;
-			padding-top: 5px;
+			padding-top: 4px;
 		}
         .GameKey  {
 		/* position: relative; */
@@ -119,11 +123,12 @@
 			background: #FFFFFF;
 		}
 		.gameTip{
-			right : 12px;
 			margin-left: 12px;
+			margin-right: 12px;
 			color: #3F505B;
-			padding-top: 4px;
-			padding-bottom: 7px;
+			padding-bottom: 4px;
+			line-height: 18px;
+			position: relative;
 		}
 		.contactMethod{
 			line-height: 12px;

@@ -30,5 +30,5 @@ function embed_rom(rom_type, rom_url, rom_name, rom_width, rom_height) {
     params.allowFullScreenInteractive = 'true';
 
     swfobject.embedSWF(cdnPath + 'flash/Nesbox1.1.swf', 'emulator', rom_width, rom_height, '11.2.0',
-        cdnPath + 'flash/expressInstall.swf', flashvars, params, attributes);
+        cdnPath + 'flash/playerProductInstall.swf', flashvars, params, attributes);
 }
