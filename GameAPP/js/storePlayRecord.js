@@ -3,7 +3,7 @@ var playRecordIndex = "0";
 var playRecordStorage = "playRecordStorage";
 var tm_listTopPadding_show = 10;
 var tm_listTopPadding_hide = 15;
-var playRecordWidth = 317;
+var playRecordWidth = 335;
 var PlayRecordLength;
 var topValue=0;
 function SetPlayRecord(x, htmlEl) {

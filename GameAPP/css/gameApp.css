@@ -175,8 +175,8 @@ html {
 
 /*---------------------------------------------------------------*/
 .playRecordBar {
-    height: 25px;
-    line-height: 25px;
+    height: 23px;
+    line-height: 23px;
     font-size: 12px;
     text-align: left;
     background-color: #E8F0FF;
@@ -186,8 +186,8 @@ html {
     width: 100%;
     z-index: 10;
     color: #3f505b;
-    border-top: 1px solid lightblue;
-    border-bottom:1px solid lightblue;
+    border-top: 1px solid #C8E3FA ;
+    border-bottom:1px solid #C8E3FA;
     -webkit-user-select: none;
 }
 
@@ -216,7 +216,7 @@ html {
     position: fixed;
     white-space: nowrap;
     overflow: hidden;
-    left: 90px;
+    left: 71px;
     right: 25px;
 }
 
@@ -261,7 +261,7 @@ html {
 .tm_list li {
     float: left;
     width: 96px;
-    height: 90px;
+    height: 91px;
     color: #3f505b;
     display: inline;
     line-height: 22px;
@@ -320,11 +320,26 @@ a:active {
     width: 100%;
     position: relative;
     display: block;
-    margin-top: 3px;
+    margin-top: 1px;
     text-align: center;
 }
 
-.replace_btn {
+.nextPage_btn {
+     border: 0;
+     margin: 0 auto;
+     width: 82px;
+     height: 28px;
+     cursor: pointer;
+     display: inline-block;
+     text-align: center;
+     vertical-align: middle;
+     line-height:28px;
+     color: #3f505b;
+     position: relative;
+     margin-right: 3px;
+     background: url("../img/replace_btn.png");
+ }
+.backPage_btn {
     border: 0;
     margin: 0 auto;
     width: 82px;
@@ -336,7 +351,7 @@ a:active {
     line-height:28px;
     color: #3f505b;
     position: relative;
-    margin-left: 6px;
+    margin-left: 3px;
     background: url("../img/replace_btn.png");
 }
 .replace_btn:hover {
@@ -348,7 +363,7 @@ a:active {
 }
 
  .more_game_text_a{
-     top: 3px;
+     top: 5px;
      margin:0;
      padding:0;
      display: inline;
@@ -360,9 +375,8 @@ a:active {
     color: #B1B8BD;
 }
 .more_game_sing_a{
-    top:3px;
+    top:5px;
     margin-left:-3px;
-    margin-top: 3px;
     padding:0;
     font-family: Aria,Helvetica,sans-serif;
     display: inline;
