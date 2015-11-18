@@ -1,0 +1,35 @@
+.GameKey {line-height:32px;color:#666;text-align:left;overflow:hidden;width:100%}
+.GameKey *{box-sizing:content-box;}
+
+.GameKey ul{clear:both;float:left;zoom:1;margin-left: 12px;}
+.GameKey ul li{float:left;font-size:12px;list-style-type:none;vertical-align: middle;}
+.GameKey ul li span{float:left;padding:0 3px 0 0px;}
+
+
+.GameKey ul li{display:inline-block;height:28px;line-height:28px;text-align:left;margin-right:10px;white-space:nowrap;*display:inline}
+.GameKey ul li.first{padding-left:0;color:#000}
+.GameKey .i-p1,.i-p2{background-image: url(../img/7K7K_keyboard.png);_margin-top:5px}
+.GameKey .i_alt,.i_arrows,.i_ctrl,.i_down,.i_end,.i_enter,.i_esc,.i_left,.i_lr,.i_mousedrag,.i_mouseleft,.i_mousemove,.i_right,.i_shift,.i_space,.i_tab,.i_ud,.i_up,.i_wasd{display:inline-block;vertical-align:middle;height:28px;line-height:99em;background:url(../img/7K7K_keyboard.png) no-repeat;margin-right:5px;overflow:hidden}
+.GameKey .i_mouseleft{width:16px;background-position:-2px -10px}
+.GameKey .i_mousedrag{width:21px;background-position:-2px -100px}
+.GameKey .i_mousemove{width:19px;background-position:-2px -70px}
+.GameKey .i_space{width:65px;background-position:-2px -294px}
+.GameKey .i_ctrl{width:39px;background-position:-2px -211px}
+.GameKey .i_enter{width:48px;background-position:-2px -156px}
+.GameKey .i_alt{width:33px;background-position:-2px -129px}
+.GameKey .i_shift{width:48px;background-position:-2px -184px}
+.GameKey .i_tab{width:33px;background-position:-2px -238px}
+.GameKey .i_end{width:33px;background-position:-2px -266px}
+.GameKey .i_wasd{width:40px;background-position:-2px -516px}
+.GameKey .i_esc{width:33px;background-position:-2px -581px}
+.GameKey .i_left{width:20px;background-position:-2px -375px}
+.GameKey .i_right{width:20px;background-position:-2px -402px}
+.GameKey .i_up{width:20px;background-position:-2px -320px}
+.GameKey .i_down{width:20px;background-position:-2px -347px}
+.GameKey .i_ud{width:41px;background-position:-2px -457px}
+.GameKey .i_lr{width:41px;background-position:-2px -429px}
+.GameKey .i_arrows{width:40px;background-position:-2px -549px}
+.GameKey .i_key{display:inline-block;vertical-align:middle;width:21px;height:21px;margin-right:5px;padding-top:6px;background:url(../img/7K7K_keyboard.png) -1px -485px no-repeat;font:700 9px/12px Verdana,Sans-serif;text-align:center;color:#0090eb;text-shadow:0 2px 1px #fff}
+.GameKey .i-p1{width:54px;height:16px;background-position:-2px -617px}
+.GameKey .i-p2{width:54px;height:16px;background-position:-2px -647px}
+.GameKey .icon{display:inline-block;overflow:hidden;margin:0 5px;vertical-align:middle;background-repeat:no-repeat;}
