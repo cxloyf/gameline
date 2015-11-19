@@ -26,7 +26,7 @@
 			overflow:hidden;
 		}
 		.opacityLine{
-			border-top: 1px solid #C8E3FA;
+			border-top: 1px solid #3f505b;
 			opacity: 0.15;
 		}
 		.refresh {
@@ -114,7 +114,7 @@
 			display: block;
 			background: #FFFFFF;
 			overflow:hidden;
-			padding-top: 4px;
+			padding-top: 5px;
 		}
         .GameKey  {
 		/* position: relative; */
@@ -123,10 +123,11 @@
 			background: #FFFFFF;
 		}
 		.gameTip{
+			top:-2px;
 			margin-left: 12px;
 			margin-right: 12px;
 			color: #3F505B;
-			padding-bottom: 4px;
+			padding-bottom: 1px;
 			line-height: 18px;
 			position: relative;
 		}

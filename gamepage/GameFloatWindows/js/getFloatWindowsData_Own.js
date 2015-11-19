@@ -14,7 +14,8 @@ function getQueryString(name) {
 var gameWidth = 0;
 var gameHeight = 0;
 function ajax() {
-    var gameUrl = "http://172.17.181.135:8264/games/" + getQueryString("id");
+    //var gameUrl = "http://172.17.181.135:8264/games/" + getQueryString("id");
+    var gameUrl = window.location.origin + "/games/" + getQueryString("id");
     $.ajax({
         url: gameUrl,
         async: true,
@@ -53,7 +54,8 @@ function requestFloatData(json) {
         type = "own";
         //$("#intro_url").html("”Œœ∑¿¥‘¥£∫" + json.result.data.intro_url);
         $("#gameGuidance").attr("name", json.result.data.name);
-
+        $("#emulator").focus();
+        
         (function () {
             var d = document.getElementById('pullDownBanner');
             var i = document.getElementById('intro_url');

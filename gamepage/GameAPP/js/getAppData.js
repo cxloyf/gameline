@@ -1,6 +1,6 @@
     var offsetPage = 0;
     var totalPage = 0;
-    var bannerHeight = 32 + 8;
+    var bannerHeight = 33 + 8+1;
     var GameRefreshCount=0;
     var extra_game_info=null;
     bdc.app.init({
@@ -19,12 +19,12 @@
 
         var url;
         if(id){
-            url = "http://172.17.181.135:8164/games?offset=" + offs+"&size=1&extra_game_id="+id;
-            //url = window.location.origin + "/games?offset=" + offs+"&size=1&extra_game_id="+id;
+            //url = "http://172.17.181.135:8164/games?offset=" + offs+"&size=1&extra_game_id="+id;
+            url = window.location.origin + "/games?offset=" + offs+"&size=1&extra_game_id="+id;
         }
         else{
-            url = "http://172.17.181.135:8164/games?offset=" + offs + "&size=1";
-            //url = window.location.origin + "/games?offset=" + offs+"&size=1";
+            //url = "http://172.17.181.135:8164/games?offset=" + offs + "&size=1";
+            url = window.location.origin + "/games?offset=" + offs+"&size=1";
         }
         $.ajax({
             url: url,

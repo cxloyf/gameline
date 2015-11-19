@@ -1,7 +1,7 @@
 var gameList = new LinkedList();
 var playRecordIndex = "0";
 var playRecordStorage = "playRecordStorage";
-var tm_listTopPadding_show = 10;
+var tm_listTopPadding_show = 10+2;
 var tm_listTopPadding_hide = 15;
 var playRecordWidth = 335;
 var PlayRecordLength;

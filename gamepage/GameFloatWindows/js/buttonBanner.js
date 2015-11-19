@@ -127,7 +127,7 @@ function refreshClick() {
     }else if(type == "unity3d"){
         unity3dDetection(MediaUrl);
     }else if(type == "own"){
-        runSimulatorInHtml(jsonTemp.result.data.type, jsonTemp.result.data.swf_url, jsonTemp.result.data.media_width, jsonTemp.result.data.media_height);
+        runSimulatorInHtml(jsonTemp.result.data.type, jsonTemp.result.data.swf_url, jsonTemp.result.data.name,jsonTemp.result.data.media_width, jsonTemp.result.data.media_height);
     }
 }
 var voicePngValue=" 0 0";
